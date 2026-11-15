@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7 Tecnologia & Segurança | TI, Redes e Segurança em Ribeirão Preto</title>
+    <meta name="description" content="Soluções completas em TI, infraestrutura de redes, firewalls, câmeras IP Intelbras, alarmes e automação em Ribeirão Preto - SP. Maicon Souza - CNPJ: 23.211.102/0001-51">
+
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b16'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='monospace' font-size='30' font-weight='700' fill='%23ffffff'%3EM%3Ctspan fill='%2322d3ee'%3E7%3C/tspan%3E%3C/text%3E%3Crect x='14' y='46' width='36' height='4' rx='2' fill='%2322d3ee'/%3E%3C/svg%3E">
+
+    <!-- Open Graph (prévia ao compartilhar no WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="M7 Tecnologia & Segurança">
+    <meta property="og:title" content="M7 Tecnologia & Segurança | TI, Redes e Segurança em Ribeirão Preto">
+    <meta property="og:description" content="Infraestrutura de redes, suporte de TI, câmeras IP Intelbras, alarmes e automação de portões em Ribeirão Preto - SP. Peça seu orçamento pelo WhatsApp.">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Dados estruturados para o Google (empresa local) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "M7 Tecnologia & Segurança",
+      "description": "Soluções em TI, infraestrutura de redes, câmeras IP, alarmes e automação de portões em Ribeirão Preto - SP.",
+      "telephone": "+55-16-99178-0786",
+      "email": "m7informaticarp@gmail.com",
+      "founder": { "@type": "Person", "name": "Maicon Souza" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ribeirão Preto",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "areaServed": { "@type": "City", "name": "Ribeirão Preto" }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://backend.intelbras.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        whatsapp: {
+                            500: '#25D366',
+                            600: '#1ebe5d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse { animation: pulse-ring 2.5s infinite; }
+        @media (prefers-reduced-motion: reduce) {
+            .whatsapp-pulse { animation: none; }
+            html { scroll-behavior: auto !important; }
+        }
+        /* Fundos das seções */
+        .bg-dots { background-color: #f8fafc; background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px); background-size: 22px 22px; }
+        .bg-grid { background-color: #ffffff; background-image: linear-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.14) 1px, transparent 1px); background-size: 40px 40px; }
+        .bg-glow-blue { background-color: #f8fafc; background-image: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.12), transparent 55%), radial-gradient(ellipse at bottom left, rgba(14, 165, 233, 0.10), transparent 50%); }
+        .bg-soft-blue { background-image: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%); }
+        #inicio { background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px), linear-gradient(to bottom, #eff6ff, #ffffff 65%, #ffffff); background-size: 22px 22px, 100% 100%; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- CABEÇALHO -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#inicio" class="flex flex-col leading-none group" aria-label="M7 Tecnologia & Segurança - ir para o início">
+                    <span class="font-mono font-bold text-[28px] sm:text-[32px] tracking-tight leading-none">
+                        <span class="text-blue-600">&lt;</span><span class="text-slate-900">M7</span><span class="text-blue-600">/&gt;</span>
+                    </span>
+                    <span class="font-mono font-bold text-[10px] sm:text-[11px] text-blue-600 tracking-wide mt-1.5">TECNOLOGIA &amp; SEGURANÇA</span>
+                    <span class="hidden sm:block font-mono text-[9px] text-slate-500 tracking-wide mt-1">TI · REDES · CFTV · AUTOMAÇÃO</span>
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-7">
+                    <a href="#inicio" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Início</a>
+                    <a href="#ti-redes" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">TI & Redes</a>
+                    <a href="#seguranca" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Segurança</a>
+                    <a href="#equipamentos" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Equipamentos</a>
+                    <a href="#orcamento" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Solicitar Orçamento</a>
+                    <a href="#sobre" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Sobre</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="hidden sm:inline-flex items-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
+                        <i data-lucide="message-circle" class="w-4 h-4 fill-slate-950"></i>
+                        <span>Solicitar Orçamento</span>
+                    </a>
+
+                    <button id="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:text-blue-600 hover:bg-slate-100 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1.5 shadow-2xl">
+            <a href="#inicio" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Início</a>
+            <a href="#ti-redes" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">TI & Redes</a>
+            <a href="#seguranca" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Segurança Eletrônica</a>
+            <a href="#equipamentos" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Equipamentos Intelbras</a>
+            <a href="#orcamento" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Solicitar Orçamento</a>
+            <a href="#sobre" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Sobre</a>
+            <a href="#localizacao" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Localização</a>
+            <div class="pt-3">
+                <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-base px-5 py-3.5 rounded-xl shadow-md">
+                    <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
+                    <span>WhatsApp (16) 99178-0786</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="inicio" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-gradient-to-b from-blue-50 via-white to-white overflow-hidden">
+            <div class="absolute inset-0 opacity-15 pointer-events-none">
+                <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-500 blur-3xl"></div>
+                <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-sky-400 blur-3xl"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs sm:text-sm font-semibold mb-5">
+                            <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
+                            <span>Atendimento Especializado em Ribeirão Preto – SP e região</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <span class="text-blue-600 font-extrabold tracking-wide uppercase text-sm sm:text-base">
+                                M7 Tecnologia & Segurança
+                            </span>
+                        </div>
+
+                        <h1 class="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight tracking-tight mb-6">
+                            Sua casa <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">protegida</span>. Sua internet <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">sempre no ar</span>.
+                        </h1>
+
+                        <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+                            Câmeras que você vê no celular, alarme, portão automático e Wi-Fi que pega em todos os cômodos. A M7 cuida da tecnologia da sua casa para você cuidar do que importa.
+                        </p>
+
+                        <div class="mb-8 max-w-2xl mx-auto lg:mx-0">
+                            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-3">
+                                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-bold shadow-md shadow-blue-600/30">
+                                    <i data-lucide="home" class="w-4 h-4"></i>
+                                    Residências · nosso foco
+                                </span>
+                                <span class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold">
+                                    <i data-lucide="store" class="w-4 h-4 text-blue-600"></i>
+                                    Pequeno comércio
+                                </span>
+                                <span class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold">
+                                    <i data-lucide="building-2" class="w-4 h-4 text-blue-600"></i>
+                                    Empresas de porte
+                                </span>
+                            </div>
+                            <p class="text-blue-700 font-semibold text-sm sm:text-base text-center lg:text-left">
+                                Da casa ao grande negócio: atendemos todos, com o mesmo cuidado.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Vim%20pelo%20site%20da%20M7%20e%20gostaria%20de%20or%C3%A7amento." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-base px-7 py-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5">
+                                <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
+                                <span>Chamar no WhatsApp (16) 99178-0786</span>
+                            </a>
+
+                            <a href="#orcamento" 
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 border border-slate-200 font-semibold text-base px-7 py-4 rounded-xl transition-all">
+                                <span>Solicitar Orçamento</span>
+                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+
+                        <div class="mt-10 pt-8 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600 shrink-0">
+                                    <i data-lucide="file-check-2" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm text-slate-600 font-medium">CNPJ Ativo & Nota Fiscal</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600 shrink-0">
+                                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm text-slate-600 font-medium">+15 Anos de Experiência</span>
+                            </div>
+                            <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
+                                <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600 shrink-0">
+                                    <i data-lucide="zap" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm text-slate-600 font-medium">Diagnóstico com Clareza</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-xl">
+                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="text-xs font-mono text-blue-600 font-semibold">M7_TECNOLOGIA_SEGURANCA</span>
+                            </div>
+
+                            <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
+                                <div class="relative h-36 sm:h-40 bg-slate-200">
+                                    <img src="https://images.unsplash.com/photo-1712159018726-4564d92f3ec2?fm=jpg&q=70&w=700&auto=format&fit=crop"
+                                         alt="Atendente de suporte técnico com headset em frente ao computador" width="700" height="467" loading="eager" fetchpriority="high" decoding="async"
+                                         class="w-full h-full object-cover object-top"
+                                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/f1f5f9/0f172a?text=Suporte+Remoto'">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent"></div>
+                                    <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">
+                                        <i data-lucide="monitor-cog" class="w-3.5 h-3.5"></i>
+                                        <span>Suporte Remoto</span>
+                                    </span>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-slate-900 font-bold text-base sm:text-lg leading-snug">Você precisa de ajuda para o seu computador?</h3>
+                                    <p class="text-blue-700 font-semibold text-sm mt-1.5 leading-snug">
+                                        Computador lento ou travando? Resolvemos à distância, sem você sair de casa.
+                                    </p>
+                                    <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Preciso%20de%20suporte%20remoto%20para%20o%20meu%20computador."
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="mt-4 inline-flex w-full items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm py-3 px-4 rounded-xl shadow-sm transition-all">
+                                        <i data-lucide="message-circle" class="w-4 h-4 fill-slate-950"></i>
+                                        <span>Pedir suporte agora</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                                <span>Responsável: <strong class="text-slate-900">Maicon Souza</strong></span>
+                                <span class="inline-flex items-center gap-1.5 text-emerald-600 font-medium">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Atendimento Ativo
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER ALARME AMT 2018 E SMART -->
+        <section id="banner-amt" class="py-10 sm:py-14 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 shadow-xl border border-slate-800">
+                    <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-sky-500/20 blur-3xl pointer-events-none"></div>
+                    <div class="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 p-6 sm:p-10 lg:p-12">
+                        <div class="order-2 lg:order-1">
+                            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-4">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                                <span>Central de alarme monitorada</span>
+                            </span>
+                            <h2 class="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight mb-3">
+                                AMT 2018 E SMART
+                            </h2>
+                            <p class="text-sky-300 font-semibold text-sm sm:text-base mb-3">Sistema Smart</p>
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-7 max-w-xl">
+                                A central AMT 2018 E Smart agora conta com supervisionamento dos dispositivos sem fio, tornando a solução ainda mais segura.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20or%C3%A7amento%20da%20central%20de%20alarme%20AMT%202018%20E%20SMART."
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
+                                    <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
+                                    <span>Solicitar orçamento</span>
+                                </a>
+                                <a href="#equipamentos"
+                                   class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl transition-colors">
+                                    <span>Ver equipamentos</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="order-1 lg:order-2">
+                            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg flex items-center justify-center">
+                                <img src="https://backend.intelbras.com/sites/default/files/styles/large/public/2022-10/sistema-smart-amt-2018-e-smart.jpg"
+                                     alt="Sistema Smart com central de alarme AMT 2018 E SMART Intelbras"
+                                     width="600" height="400" loading="lazy" decoding="async"
+                                     class="w-full max-h-72 object-contain"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=AMT+2018+E+SMART'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO TI & REDES -->
+        <section id="ti-redes" class="py-14 bg-glow-blue">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-wider">Tecnologia & Conectividade</span>
+                    <h2 class="font-extrabold text-2xl sm:text-3xl text-slate-900 mt-2 mb-3">
+                        TI, Infraestrutura & Soluções para Pequenas Empresas
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Rede e computadores do seu negócio funcionando com velocidade, organização e segurança de dados.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div id="card-redes" class="scroll-mt-24 group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 transition-all flex flex-col">
+                        <div class="relative h-44 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1750711731797-25c3f2551ff8?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Switch de rede com cabos ethernet conectados" width="700" height="467" loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/f1f5f9/0f172a?text=M7+Tecnologia'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">Redes</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-bold text-lg text-slate-900 mb-1.5 leading-snug">Redes e Infraestrutura</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Rede rápida, estável e organizada, sem quedas de sinal nem bagunça de cabos.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Roteadores e Switches</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Racks e cabeamento</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Wi-Fi corporativo</span>
+                            </div>
+                            <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20or%C3%A7amento%20para%20Redes." target="_blank" rel="noopener noreferrer"
+                               class="mt-auto inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Solicitar avaliação de rede</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 transition-all flex flex-col">
+                        <div class="relative h-44 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1676636810289-2ac22579d988?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Técnico fazendo manutenção em notebook com ferramentas" width="700" height="467" loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/f1f5f9/0f172a?text=M7+Tecnologia'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">Manutenção</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-bold text-lg text-slate-900 mb-1.5 leading-snug">Manutenção de PCs, Notebooks & Suporte</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Seus computadores rápidos, revisados e prontos para o dia a dia.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Upgrade SSD e RAM</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Formatação e limpeza</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Suporte remoto e presencial</span>
+                            </div>
+                            <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Preciso%20de%20suporte%20t%C3%A9cnico." target="_blank" rel="noopener noreferrer"
+                               class="mt-auto inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Agendar suporte técnico</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="card-empresas" class="scroll-mt-24 group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 transition-all flex flex-col">
+                        <div class="relative h-44 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1765371512336-99c2b1c6975f?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Escritório moderno com computadores" width="700" height="467" loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/f1f5f9/0f172a?text=M7+Tecnologia'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">Empresas</span>
+                        <span class="absolute top-3 right-3 z-10 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full shadow">Foco Empresarial</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-bold text-lg text-slate-900 mb-1.5 leading-snug">O que Pequenas Empresas Mais Precisam</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Soluções práticas que organizam escritórios, lojas, consultórios e galpões.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Servidor de arquivos</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Backup automático</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">Impressoras em rede</span>
+                            </div>
+                            <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20saber%20mais%20sobre%20servidores%20e%20backup." target="_blank" rel="noopener noreferrer"
+                               class="mt-auto inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link">
+                                <span>Consultar solução empresarial</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SEGURANÇA ELETRÔNICA -->
+        <section id="seguranca" class="py-20 bg-grid border-t border-slate-200/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-wider">Proteção Patrimonial</span>
+                    <h2 class="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 mt-2 mb-4">
+                        Segurança Eletrônica & Automação de Acesso
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        Proteja sua família, seu comércio e sua empresa com equipamentos confiáveis, acabamento limpo e controle na palma da mão.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1563920443079-783e5c786b83?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
+                                <i data-lucide="cctv" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-white mb-2">Câmeras IP e CFTV</h3>
+                            <p class="text-slate-200 text-sm leading-relaxed mb-5">
+                                Instalação de câmeras de alta definição, DVRs/NVRs e configuração de acesso remoto pelo celular.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Acesso pelo Celular</span>
+                        </div>
+                    </div>
+
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1533052439013-45751c7b7dc2?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
+                                <i data-lucide="bell-ring" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-white mb-2">Alarmes Residenciais & Comerciais</h3>
+                            <p class="text-slate-200 text-sm leading-relaxed mb-5">
+                                Centrais de alarme monitoráveis ou via aplicativo, sensores de presença e magnéticos.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Monitoramento Inteligente</span>
+                        </div>
+                    </div>
+
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1646425620296-ff33b34852d6?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
+                                <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-white mb-2">Cercas Elétricas e Concertinas</h3>
+                            <p class="text-slate-200 text-sm leading-relaxed mb-5">
+                                Proteção perimetral reforçada com instalação profissional de cercas e concertinas de aço.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Proteção Perimetral</span>
+                        </div>
+                    </div>
+
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1626819171158-74e6ef658c10?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
+                                <i data-lucide="door-open" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-white mb-2">Motores e Portões Automáticos</h3>
+                            <p class="text-slate-200 text-sm leading-relaxed mb-5">
+                                Instalação e reparo de motores basculantes, deslizantes e pivotantes com controles anticlonagem.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Conforto & Agilidade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+                    <div class="text-center md:text-left">
+                        <h3 class="font-bold text-xl text-white">Precisa instalar ou revisar suas câmeras, alarme, cerca ou portão?</h3>
+                        <p class="text-slate-300 text-sm mt-1">Fale diretamente com a <strong>M7 Tecnologia & Segurança</strong> em Ribeirão Preto.</p>
+                    </div>
+                    <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Or%C3%A7amento%20para%20Seguran%C3%A7a%20Eletr%C3%B4nica." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="shrink-0 inline-flex items-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-md transition-all">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
+                        <span>Orçamento de Segurança</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO EQUIPAMENTOS & SOLUÇÕES INTELBRAS -->
+        <section id="equipamentos" class="py-20 bg-soft-blue text-slate-900 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+                    <div class="max-w-2xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-blue-600 text-xs font-bold uppercase tracking-wider mb-3">
+                            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                            <span>Hardware Profissional Intelbras</span>
+                        </div>
+                        <h2 class="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 leading-tight">
+                            Equipamentos & Soluções Homologadas
+                        </h2>
+                        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+                            Trabalhamos com equipamentos líderes de mercado para garantir estabilidade de rede, gravação contínua e enlaces sem fio de alta performance.
+                        </p>
+                    </div>
+
+                    <div class="inline-flex p-1.5 rounded-xl bg-white border border-slate-200 self-start lg:self-auto">
+                        <button type="button" onclick="filterEquipments('Todos')" class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-blue-600 text-white shadow-md transition-all cursor-pointer" data-filter="Todos">Todos (8)</button>
+                        <button type="button" onclick="filterEquipments('Segurança')" class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-blue-600 transition-all cursor-pointer" data-filter="Segurança">Segurança</button>
+                        <button type="button" onclick="filterEquipments('Redes')" class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-blue-600 transition-all cursor-pointer" data-filter="Redes">Redes</button>
+                    </div>
+                </div>
+
+                <div id="equipments-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                    <!-- Os cards serão injetados via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO ORÇAMENTO RÁPIDO -->
+        <section id="orcamento" class="py-20 bg-glow-blue border-t border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-wider">Atendimento Ágil</span>
+                    <h2 class="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 mt-2 mb-3">
+                        Solicitar Orçamento via WhatsApp
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Selecione abaixo o que você precisa e envie sua solicitação pronta direto para o WhatsApp da <strong>M7 Tecnologia & Segurança</strong> (16 99178-0786).
+                    </p>
+                </div>
+
+                <form id="quote-form" onsubmit="sendQuickQuote(event)" class="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-slate-200/80">
+                    <div class="mb-7">
+                        <label class="block text-sm font-bold text-slate-900 mb-3">
+                            1. Selecione um ou mais serviços desejados:
+                        </label>
+                        <div id="services-checkboxes" role="group" aria-label="Serviços desejados" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- Checkboxes gerados por JS -->
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+                        <div>
+                            <label for="clientName" class="block text-sm font-bold text-slate-900 mb-2">
+                                2. Seu Nome ou Nome da Empresa (opcional)
+                            </label>
+                            <input id="clientName" type="text" placeholder="Ex: Carlos / Clínica Saúde" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+                        </div>
+
+                        <div>
+                            <label for="clientType" class="block text-sm font-bold text-slate-900 mb-2">
+                                3. Tipo de Atendimento
+                            </label>
+                            <select id="clientType" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+                                <option value="Empresa / Comércio">Empresa / Comércio / Escritório</option>
+                                <option value="Residência / Condomínio">Residência / Condomínio</option>
+                                <option value="Indústria / Galpão">Indústria / Galpão</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-7">
+                        <label for="details" class="block text-sm font-bold text-slate-900 mb-2">
+                            4. Descreva brevemente sua necessidade (opcional)
+                        </label>
+                        <textarea id="details" rows="3" placeholder="Ex: Preciso organizar o rack da empresa, configurar um roteador e instalar câmeras IP..." class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full flex items-center justify-center gap-3 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-extrabold text-base py-4 px-6 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
+                        <span>Enviar Solicitação no WhatsApp (16) 99178-0786</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="py-20 bg-dots border-t border-slate-200/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-wider">Compromisso e Credibilidade</span>
+                    <h2 class="font-extrabold text-2xl sm:text-3xl text-slate-900 mt-2">
+                        Por que escolher a M7 Tecnologia & Segurança?
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/70">
+                        <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+                            <i data-lucide="handshake" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 mb-2">Diagnóstico com Clareza</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Explicação clara e honesta antes de qualquer serviço. Só trocamos peças quando realmente necessário.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/70">
+                        <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 mb-2">Solução Integrada (TI + Física)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Um único parceiro técnico para cuidar da rede, computadores, servidores, câmeras e portões da sua empresa.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/70">
+                        <div class="w-11 h-11 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center mb-4">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 mb-2">Agilidade no Suporte</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Contato direto com o especialista técnico, sem filas de call center ou burocracia.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/70">
+                        <div class="w-11 h-11 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">
+                            <i data-lucide="file-text" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 mb-2">Empresa Formalizada</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Segurança jurídica com CNPJ ativo (23.211.102/0001-51) e emissão de Nota Fiscal.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-sm">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-4 flex flex-col items-center text-center">
+                            <div class="w-36 h-36 rounded-2xl bg-gradient-to-br from-slate-900 via-blue-900 to-sky-600 p-1 shadow-xl mb-5">
+                                <div class="w-full h-full bg-slate-900 rounded-xl flex flex-col items-center justify-center text-white px-2">
+                                    <span class="font-extrabold text-4xl tracking-tight text-sky-400">M7</span>
+                                    <span class="text-[10px] uppercase tracking-widest text-slate-300 mt-1 font-semibold">Tecnologia & Segurança</span>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-xl text-slate-900">M7 Tecnologia & Segurança</h3>
+                            <p class="text-sm text-blue-600 font-semibold mt-0.5">Responsável Técnico: Maicon Souza</p>
+                            <div class="mt-3 inline-block bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-600 font-mono">
+                                CNPJ: 23.211.102/0001-51
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-8">
+                            <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">Sobre a M7</span>
+                            <h2 class="font-extrabold text-2xl sm:text-3xl text-slate-900 mt-1 mb-5">
+                                Experiência prática, transparência e compromisso com cada cliente.
+                            </h2>
+                            <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+                                <p>
+                                    A <strong>M7 Tecnologia & Segurança</strong>, liderada por <strong>Maicon Souza</strong>, atua em Ribeirão Preto e região oferecendo atendimento técnico especializado com mais de 15 anos de vivência prática em eletrônica, segurança patrimonial, redes e informática.
+                                </p>
+                                <p>
+                                    Nosso compromisso é entregar soluções duradouras e bem acabadas, sempre pautadas na honestidade e na clareza. Seja estruturando a rede e os servidores de uma pequena empresa ou protegendo uma residência com câmeras IP, cercas e motores de portão, cada projeto é tratado com dedicação total.
+                                </p>
+                            </div>
+
+                            <div class="mt-7 pt-6 border-t border-slate-200">
+                                <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Conheci%20a%20M7%20pelo%20site." 
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="inline-flex items-center gap-2 bg-slate-900 hover:bg-blue-600 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-colors">
+                                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                                    <span>Falar diretamente com Maicon Souza</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCALIZAÇÃO -->
+        <section id="localizacao" class="py-20 bg-slate-50 border-t border-slate-200/70">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-wider">Onde estamos</span>
+                    <h2 class="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 mt-2 mb-3">
+                        Perto de você em Ribeirão Preto
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Campos Elíseos, Ribeirão Preto – SP. Atendemos residências, comércios e empresas na cidade e região.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-md border border-slate-200 bg-white">
+                    <iframe title="Mapa com a localização da M7 Tecnologia &amp; Segurança em Ribeirão Preto"
+                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d232.55008048571761!2d-47.80870710393884!3d-21.160304894649055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sanita%20garibaldi%20localidade%20nos%20campos%20eliseos!5e0!3m2!1spt-BR!2sbr!4v1794743433485!5m2!1spt-BR!2sbr"
+                            class="block w-full h-[320px] sm:h-[420px]" style="border:0;"
+                            allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=-21.1603049,-47.8087071"
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-colors">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <span>Como chegar</span>
+                    </a>
+                    <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Vim%20pelo%20site%20da%20M7."
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-sm transition-colors">
+                        <i data-lucide="message-circle" class="w-4 h-4 fill-slate-950"></i>
+                        <span>Falar no WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer id="contato" class="bg-slate-100 text-slate-600 pt-16 pb-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200">
+                <div class="lg:col-span-5">
+                    <div class="mb-5">
+                        <div class="font-mono font-bold text-5xl tracking-tight leading-none">
+                            <span class="text-blue-600">&lt;</span><span class="text-slate-900">M7</span><span class="text-blue-600">/&gt;</span>
+                        </div>
+                        <div class="font-mono font-bold text-sm text-blue-600 tracking-wide mt-2">TECNOLOGIA &amp; SEGURANÇA</div>
+                        <div class="font-mono text-xs text-slate-500 tracking-wide mt-1">TI · REDES · CFTV · AUTOMAÇÃO</div>
+                        <div class="text-xs text-blue-600 font-medium mt-3">Responsável: Maicon Souza</div>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-md">
+                        Prestação de serviços em TI, infraestrutura de redes corporativas, suporte técnico e sistemas completos de segurança eletrônica e automação.
+                    </p>
+                    <div class="inline-block bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-600">
+                        <span class="text-slate-500">CNPJ:</span> <strong class="text-slate-900 font-mono">23.211.102/0001-51</strong>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="font-bold text-slate-900 text-base mb-4">Navegação</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#inicio" class="text-slate-500 hover:text-blue-600 transition-colors">Início</a></li>
+                        <li><a href="#ti-redes" class="text-slate-500 hover:text-blue-600 transition-colors">TI & Infraestrutura de Redes</a></li>
+                        <li><a href="#seguranca" class="text-slate-500 hover:text-blue-600 transition-colors">Segurança Eletrônica & Portões</a></li>
+                        <li><a href="#equipamentos" class="text-slate-500 hover:text-blue-600 transition-colors">Equipamentos Intelbras</a></li>
+                        <li><a href="#orcamento" class="text-slate-500 hover:text-blue-600 transition-colors">Solicitar Orçamento</a></li>
+                        <li><a href="#sobre" class="text-slate-500 hover:text-blue-600 transition-colors">Sobre a M7</a></li>
+                        <li><a href="#localizacao" class="text-slate-500 hover:text-blue-600 transition-colors">Localização</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h4 class="font-bold text-slate-900 text-base mb-4">Atendimento & Contato</h4>
+                    <ul class="space-y-3.5 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=-21.1603049,-47.8087071" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-blue-600 transition-colors">Campos Elíseos, Ribeirão Preto – SP e região</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-whatsapp-500 shrink-0 mt-0.5"></i>
+                            <div>
+                                <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!" 
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="text-slate-900 font-bold hover:text-whatsapp-500 transition-colors text-base">
+                                    (16) 99178-0786
+                                </a>
+                                <span class="block text-xs text-slate-500">Clique para abrir o WhatsApp</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
+                            <a href="mailto:m7informaticarp@gmail.com" class="text-slate-600 hover:text-blue-600 transition-colors">
+                                m7informaticarp@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 M7 Tecnologia & Segurança (Maicon Souza) — CNPJ: 23.211.102/0001-51. Todos os direitos reservados.</p>
+                <p>Ribeirão Preto - SP</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Vim%20pelo%20site%20da%20M7." 
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Falar com Maicon Souza no WhatsApp (16) 99178-0786"
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold px-4 py-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl whatsapp-pulse transition-transform hover:scale-105">
+        <i data-lucide="message-circle" class="w-6 h-6 fill-slate-950"></i>
+        <span class="hidden sm:inline text-sm">WhatsApp (16) 99178-0786</span>
+    </a>
+
+    <!-- SCRIPT DE APLICAÇÃO -->
+    <script>
+        // Dados dos Equipamentos Intelbras e Motores
+        const equipmentsData = [
+            {
+                id: 'camera-ip',
+                category: 'Segurança',
+                tag: 'Segurança & CFTV',
+                title: 'Câmera IP Intelbras',
+                description: 'Alta definição Full HD/4K com visão noturna infravermelha, proteção externa e acesso ao vivo direto pelo celular.',
+                highlights: ['Full HD', 'Visão Noturna', 'App Mobile'],
+                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2026-05/vip-1230-d-sc.03.png',
+                quoteLabel: 'Câmera IP Intelbras'
+            },
+            {
+                id: 'nvd-intelbras',
+                category: 'Segurança',
+                tag: 'Armazenamento IP',
+                title: 'NVD Intelbras (Gravador de Vídeo em Rede)',
+                description: 'Central inteligente para gravação contínua das câmeras IP com alta capacidade de armazenamento, detecção de movimento e acesso remoto.',
+                highlights: ['Gravação 24/7', 'Gestão IP', 'Backup Seguro'],
+                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2025-05/iNVD%203016-P_persp-esq-1_0.png',
+                quoteLabel: 'NVD Intelbras (Gravador de Vídeo em Rede)'
+            },
+            {
+                id: 'motor_basculante',
+                category: 'Segurança',
+                tag: 'Automação de Portões',
+                title: 'Motor Automatizador Basculante de Alta Performance',
+                description: 'Abertura rápida, silenciosa e segura para portões basculantes residenciais e comerciais, com central eletrônica inteligente, fim de curso preciso e controles anticlonagem.',
+                highlights: ['Abertura rápida', 'Destravamento manual', 'Central com rampa suave'],
+                image: 'https://www.niceforyou.com/sites/default/files/styles/800x800_scale/public/2026-05/MAXER-IHS.png?itok=CmiLFfUP' ,
+                quoteLabel: 'Motor Automatizador Basculante de Alta Performance'
+            },
+            {
+                id: 'amt-2018-e-smart',
+                category: 'Segurança',
+                tag: 'Central de alarme monitorada',
+                title: 'AMT 2018 E SMART',
+                description: 'A central AMT 2018 E Smart agora conta com supervisionamento dos dispositivos sem fio, tornando a solução ainda mais segura.',
+                highlights: ['Sistema Smart', 'Monitorada', 'Supervisão sem fio'],
+                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2022-10/amt-2018-e-smart-frontal.jpg',
+                quoteLabel: 'Central de Alarme AMT 2018 E SMART Intelbras'
+            },
+            {
+                id: 'roteador-intelbras',
+                category: 'Redes',
+                tag: 'Conectividade Wi-Fi',
+                title: 'Roteador Intelbras',
+                description: 'Sinal Wi-Fi estável e de alto alcance para escritórios e residências, suportando múltiplos dispositivos conectados sem quedas.',
+                highlights: ['Alta Velocidade', 'Sinal Estável', 'Controle de Banda'],
+                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2023-07/imagem-categoria-roteadores-w6-1500g.png?itok=x-mUGNNM',
+                quoteLabel: 'Roteador Intelbras'
+            },
+            {
+                id: 'switch-gerenciavel',
+                category: 'Redes',
+                tag: 'Infraestrutura de Rede',
+                title: 'Switch Gerenciável',
+                description: 'Tráfego de dados profissional com segmentação por VLANs, portas Gigabit e priorização inteligente para empresas e racks estruturados.',
+                highlights: ['Portas Gigabit', 'Gestão VLAN', 'Padrão Rack'],
+                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2024-04/s2352g-b-04.png' ,
+                quoteLabel: 'Switch Gerenciável Intelbras'
+            },
+            {
+                id: 'rack-enterprise',
+                category: 'Redes',
+                tag: 'Data Center & Racks',
+                title: 'Rack Fechado Enterprise 44U 1160mm',
+                description: 'O Rack Fechado Enterprise (RFE) é ideal para DataCenters, oferecendo robustez e maior profundidade para acomodar servidores.',
+                highlights: ['44U', '1160 mm de profundidade', 'Ideal p/ DataCenter'],
+                image: 'https://backend.intelbras.com/sites/default/files/2024-09/rack-fechado-enterprise-rfe-44116.png',
+                quoteLabel: 'Rack Fechado Enterprise 44U 1160mm'
+            },
+            {
+                id: 'radios-outdoor',
+                category: 'Redes',
+                tag: 'Enlace Ponto a Ponto',
+                title: 'Conexão Sem Fio (Par de Rádios Outdoor)',
+                description: 'Interliga matriz e filial, galpões ou câmeras remotas a longa distância sem precisar passar cabos, usando dois rádios externos.',
+                highlights: ['Longa Distância', 'Sem Cabos', 'Uso Externo (IP65)'],
+                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2026-01/kit-wom-5a-mimo-g2-01.png',
+                quoteLabel: 'Conexão Sem Fio (Par de Rádios Outdoor Intelbras)'
+            }
+        ];
+
+        // Lista de serviços para o orçamento rápido
+        const quoteServicesList = [
+            'Infraestrutura de Redes',
+            'Roteadores',
+            'Switches',
+            'Firewall',
+            'Suporte de TI',
+            'Backup',
+            'Servidor de Arquivos',
+            'Manutenção / Upgrade de Computador',
+            'Manutenção / Upgrade de Notebook',
+            'Câmeras IP / CFTV',
+            'Acesso às Câmeras pelo Celular',
+            'Alarme Residencial',
+            'Alarme Comercial',
+            'Cerca Elétrica',
+            'Concertina',
+            'Motores para Portões',
+            'Câmera IP Intelbras',
+            'NVD Intelbras (Gravador de Vídeo em Rede)',
+            'Motor Automatizador Basculante de Alta Performance',
+            'Central de Alarme AMT 2018 E SMART Intelbras',
+            'Roteador Intelbras',
+            'Switch Gerenciável Intelbras',
+            'Rack Fechado Enterprise 44U 1160mm',
+            'Conexão Sem Fio (Par de Rádios Outdoor Intelbras)'
+        ];
+
+        let selectedQuoteServices = ['Infraestrutura de Redes'];
+
+        // Renderiza os cards de equipamentos
+        function renderEquipments(filter = 'Todos') {
+            const grid = document.getElementById('equipments-grid');
+            const filtered = filter === 'Todos' 
+                ? equipmentsData 
+                : equipmentsData.filter(item => item.category === filter);
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-200/90 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-white h-56 p-6 flex items-center justify-center border-b border-slate-100 overflow-hidden">
+                            <span class="absolute top-3.5 left-3.5 z-10 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+                                ${item.tag}
+                            </span>
+                            <img src="${item.image}" alt="${item.title}" width="400" height="300" loading="lazy" decoding="async" class="max-h-40 max-w-full object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/400x300/f8fafc/0f172a?text=M7+Tecnologia'">
+                        </div>
+
+                        <div class="p-6 pb-4">
+                            <h3 class="font-extrabold text-lg sm:text-xl text-slate-900 mb-2.5 leading-snug">${item.title}</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-5">${item.description}</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${item.highlights.map(h => `
+                                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        ${h}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
+                        <a href="https://wa.me/5516991780786?text=${encodeURIComponent(`Olá Maicon! Gostaria de cotação para: *${item.title}*.`)}" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="flex-1 inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-sm transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4 fill-slate-950 shrink-0"></i>
+                            <span>Cotar no WhatsApp</span>
+                        </a>
+
+                        <button type="button" data-add-quote="${item.id}"
+                                class="inline-flex items-center justify-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs py-3 px-3.5 rounded-xl transition-colors cursor-pointer"
+                                title="Incluir na solicitação de orçamento">
+                            <span>Incluir no Orçamento</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            grid.querySelectorAll('button[data-add-quote]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = equipmentsData.find(i => i.id === btn.dataset.addQuote);
+                    if (item) addEquipmentToQuote(item.quoteLabel);
+                });
+            });
+
+            if (window.lucide) lucide.createIcons();
+        }
+
+        // Filtro de equipamentos
+        function filterEquipments(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if(btn.dataset.filter === category) {
+                    btn.className = "filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-blue-600 text-white shadow-md transition-all cursor-pointer";
+                } else {
+                    btn.className = "filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-blue-600 transition-all cursor-pointer";
+                }
+            });
+            renderEquipments(category);
+        }
+
+        // Renderiza checkboxes do orçamento
+        function renderQuoteCheckboxes() {
+            const container = document.getElementById('services-checkboxes');
+            container.innerHTML = quoteServicesList.map(service => {
+                const isSelected = selectedQuoteServices.includes(service);
+                return `
+                    <button type="button" data-service="${service}" aria-pressed="${isSelected}"
+                            class="flex items-center gap-3 p-3.5 rounded-xl border text-left text-sm font-medium transition-all cursor-pointer ${
+                                isSelected ? 'bg-blue-50 border-blue-600 text-blue-900 shadow-sm' : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
+                            }">
+                        <div class="w-5 h-5 rounded-md flex items-center justify-center shrink-0 transition-colors ${
+                            isSelected ? 'bg-blue-600 text-white' : 'bg-white border border-slate-300'
+                        }">
+                            ${isSelected ? '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
+                        </div>
+                        <span>${service}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function toggleQuoteService(service) {
+            if (selectedQuoteServices.includes(service)) {
+                selectedQuoteServices = selectedQuoteServices.filter(s => s !== service);
+            } else {
+                selectedQuoteServices.push(service);
+            }
+            renderQuoteCheckboxes();
+        }
+
+        function addEquipmentToQuote(label) {
+            if (!selectedQuoteServices.includes(label)) {
+                selectedQuoteServices.push(label);
+            }
+            renderQuoteCheckboxes();
+            const section = document.getElementById('orcamento');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function sendQuickQuote(e) {
+            e.preventDefault();
+            const clientName = document.getElementById('clientName').value.trim();
+            const clientType = document.getElementById('clientType').value;
+            const details = document.getElementById('details').value.trim();
+
+            const servicesText = selectedQuoteServices.length > 0
+                ? selectedQuoteServices.map(s => `• ${s}`).join('\n')
+                : '• Orçamento Geral';
+
+            const message = [
+                `Olá Maicon! Vim pelo site da *M7 Tecnologia & Segurança* e gostaria de solicitar um orçamento.`,
+                clientName ? `*Nome:* ${clientName}` : null,
+                `*Local:* ${clientType}`,
+                `\n*Serviços de interesse:*\n${servicesText}`,
+                details ? `\n*Detalhes:* ${details}` : null
+            ].filter(Boolean).join('\n');
+
+            window.open(`https://wa.me/5516991780786?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+            renderEquipments('Todos');
+            renderQuoteCheckboxes();
+
+            // Menu mobile toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            const setMenu = (open) => {
+                mobileMenu.classList.toggle('hidden', !open);
+                mobileMenuBtn.setAttribute('aria-expanded', String(open));
+                mobileMenuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+            };
+
+            mobileMenuBtn.addEventListener('click', () => {
+                setMenu(mobileMenu.classList.contains('hidden'));
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => setMenu(false));
+            });
+
+            // Seleção de serviços do orçamento (delegação de eventos)
+            document.getElementById('services-checkboxes').addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-service]');
+                if (btn) toggleQuoteService(btn.dataset.service);
+            });
+        });
+    </script>
+</body>
+</html>
