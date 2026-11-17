@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>M7 · Admin do catálogo</title>
+<style>
+:root{--bg:#f4f6f8;--sf:#fff;--tx:#0f172a;--mu:#64748b;--ac:#2563eb;--bd:#e2e8f0;--rd:#dc2626;--ok:#16a34a;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0b1220;--sf:#131c2e;--tx:#e5edf8;--mu:#94a3b8;--ac:#60a5fa;--bd:#24304a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;padding:env(safe-area-inset-top,0px) 0 calc(24px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:680px;margin:0 auto;padding:16px}
+.box,.it,.frm{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:16px}
+.box{margin-top:8vh;display:flex;flex-direction:column;gap:10px}
+h2{margin:0 0 4px;font-size:20px}h3{margin:22px 0 8px;font-size:16px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.logo{font:700 20px ui-monospace,Menlo,Consolas,monospace;color:var(--ac)}
+input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+textarea{min-height:80px}
+button{font:inherit;cursor:pointer;padding:10px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--sf);color:var(--tx)}
+.pri{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:600}
+.it{margin-bottom:10px;display:flex;flex-direction:column;gap:8px}
+.it b{word-break:break-word}
+.ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ctl input[type=number]{width:120px}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:14px}
+.ctl input[type=checkbox]{width:auto}
+.mu{color:var(--mu);font-size:14px}.er{color:var(--rd);margin:0;min-height:1.2em}
+#nt{position:sticky;top:0;color:var(--ok);font-weight:600;min-height:1.4em}
+.frm{display:flex;flex-direction:column;gap:10px}
+.th{display:flex;gap:10px;flex-wrap:wrap}.th span{position:relative}
+.th img{width:72px;height:72px;object-fit:cover;border-radius:8px}
+.th u{position:absolute;top:-8px;right:-8px;background:var(--rd);color:#fff;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;text-decoration:none;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+/* PREENCHA com os dados do seu projeto (Project Settings → API). A chave anon é pública por natureza. */
+const SB_URL="https://uczeveakoanjboviggkd.supabase.co",SB_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjemV2ZWFrb2FuamJvdmlnZ2tkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ5MDY1MjMsImV4cCI6MjExMDQ4MjUyM30.5UJAqNFr7DzLRmg_uACyaZH0RK6PL26dqEHR51vAQyc";
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let sb=null,user=null,rows=[],ed={fotos:[]},note="";
+try{sb=supabase.createClient(SB_URL,SB_KEY)}catch(e){}
+const flash=t=>{const n=$("#nt");if(n)n.textContent=t};
+const grab=()=>{const g=i=>$(i)?$(i).value:"";ed.nome=g("#fn");ed.preco=g("#fp");ed.ordem=g("#fo");ed.descricao=g("#fd");if($("#fa"))ed.ativo=$("#fa").checked};
+async function load(){const r=await sb.from("produtos").select("*").order("ordem").order("nome");if(r.error)note="Erro ao carregar: "+r.error.message;rows=r.data||[]}
+
+function view(){
+  const a=$("#app");
+  if(!sb){a.innerHTML='<div class="box"><h2>Configuração pendente</h2><p class="mu">Preencha SB_URL e SB_KEY no início do arquivo admin-m7.html.</p></div>';return}
+  if(!user){a.innerHTML=`<div class="box"><div class="logo">&lt;M7/&gt; Admin</div><input id="em" type="email" placeholder="E-mail" autocomplete="username"><input id="pw" type="password" placeholder="Senha" autocomplete="current-password"><p class="er">${esc(note)}</p><button class="pri" id="lg">Entrar</button></div>`;return}
+  a.innerHTML=`<div class="top"><span class="logo">&lt;M7/&gt; Admin</span><button id="out">Sair</button></div><div id="nt">${esc(note)}</div>
+  <h3>Produtos e preços</h3>
+  ${rows.map(p=>`<div class="it" data-id="${p.id}"><b>${esc(p.nome)}</b><div class="ctl"><input type="number" inputmode="decimal" step="0.01" min="0" value="${p.preco}" data-pr aria-label="Preço"><label><input type="checkbox" data-at ${p.ativo?"checked":""}> Visível no site</label><button data-ed>Editar</button><button data-del aria-label="Excluir">Excluir</button></div></div>`).join("")||'<p class="mu">Nenhum produto ainda.</p>'}
+  <h3>${ed.id?"Editar produto":"Novo produto"}</h3>
+  <div class="frm">
+    <input id="fn" placeholder="Nome do produto" value="${esc(ed.nome)}">
+    <input id="fp" type="number" inputmode="decimal" step="0.01" min="0" placeholder="Preço (R$)" value="${esc(ed.preco)}">
+    <textarea id="fd" placeholder="Detalhes do produto">${esc(ed.descricao)}</textarea>
+    <input id="fo" type="number" placeholder="Ordem de exibição (1, 2, 3…)" value="${esc(ed.ordem)}">
+    <label class="ctl"><input id="fa" type="checkbox" style="width:auto" ${ed.ativo===false?"":"checked"}> Visível no site</label>
+    <div class="th">${ed.fotos.map((s,i)=>`<span><img src="${esc(s)}" alt=""><u data-rm="${i}">×</u></span>`).join("")}</div>
+    <input id="ff" type="file" accept="image/*" multiple>
+    <button class="pri" id="sv">${ed.id?"Salvar alterações":"Adicionar produto"}</button>
+    ${ed.id?'<button id="cn">Cancelar edição</button>':""}
+  </div>`;
+}
+
+function shrink(f){return new Promise(res=>{const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,900/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);c.getContext("2d").drawImage(i,0,0,c.width,c.height);c.toBlob(b=>res(b),"image/jpeg",.82)};i.onerror=()=>res(null);i.src=r.result};r.onerror=()=>res(null);r.readAsDataURL(f)})}
+async function upload(f){const b=await shrink(f);if(!b)return null;const path=crypto.randomUUID()+".jpg";const r=await sb.storage.from("produtos").upload(path,b,{contentType:"image/jpeg"});if(r.error){flash("Erro na foto: "+r.error.message);return null}return sb.storage.from("produtos").getPublicUrl(path).data.publicUrl}
+
+$("#app").addEventListener("click",async e=>{
+  const t=e.target,id=t.closest("[data-id]")&&t.closest("[data-id]").dataset.id;
+  if(t.id==="lg"){const r=await sb.auth.signInWithPassword({email:$("#em").value.trim(),password:$("#pw").value});if(r.error){note="E-mail ou senha incorretos.";view();return}user=r.data.user;note="";await load();view();return}
+  if(t.id==="out"){await sb.auth.signOut();user=null;rows=[];note="";view();return}
+  if(t.hasAttribute("data-del")&&id){const p=rows.find(p=>p.id===id);if(!confirm("Excluir “"+p.nome+"”?"))return;const r=await sb.from("produtos").delete().eq("id",id);if(r.error){flash("Erro: "+r.error.message);return}
+    if(p.fotos&&p.fotos.length)sb.storage.from("produtos").remove(p.fotos.map(u=>u.split("/produtos/").pop()));await load();note="Produto excluído.";view();return}
+  if(t.hasAttribute("data-ed")&&id){const p=rows.find(p=>p.id===id);ed={id:p.id,nome:p.nome,preco:p.preco,descricao:p.descricao,ordem:p.ordem,ativo:p.ativo,fotos:[...(p.fotos||[])]};note="";view();$("#fn").scrollIntoView({behavior:"smooth"});return}
+  if(t.hasAttribute("data-rm")){grab();ed.fotos.splice(+t.dataset.rm,1);view();return}
+  if(t.id==="cn"){ed={fotos:[]};view();return}
+  if(t.id==="sv"){grab();const nome=(ed.nome||"").trim();if(!nome){flash("Informe o nome do produto.");return}
+    const d={nome,preco:parseFloat(ed.preco)||0,descricao:(ed.descricao||"").trim(),ordem:parseInt(ed.ordem)||0,ativo:ed.ativo!==false,fotos:ed.fotos,atualizado_em:new Date().toISOString()};
+    const r=ed.id?await sb.from("produtos").update(d).eq("id",ed.id):await sb.from("produtos").insert(d);
+    if(r.error){flash("Erro ao salvar: "+r.error.message);return}
+    ed={fotos:[]};await load();note="Salvo ✓";view();window.scrollTo(0,0)}
+});
+$("#app").addEventListener("change",async e=>{
+  const t=e.target,id=t.closest("[data-id]")&&t.closest("[data-id]").dataset.id;
+  if(t.hasAttribute("data-pr")&&id){const r=await sb.from("produtos").update({preco:parseFloat(t.value)||0,atualizado_em:new Date().toISOString()}).eq("id",id);flash(r.error?"Erro: "+r.error.message:"Preço salvo ✓");return}
+  if(t.hasAttribute("data-at")&&id){const r=await sb.from("produtos").update({ativo:t.checked,atualizado_em:new Date().toISOString()}).eq("id",id);flash(r.error?"Erro: "+r.error.message:t.checked?"Agora visível no site ✓":"Escondido do site ✓");return}
+  if(t.id==="ff"){grab();flash("Enviando fotos…");for(const f of t.files){const u=await upload(f);if(u)ed.fotos.push(u)}view();flash("Fotos enviadas. Clique em salvar para concluir.")}
+});
+(async()=>{
+  if(sb){const s=await sb.auth.getSession();if(s.data.session){user=s.data.session.user;await load()}}
+  view();
+})();
+</script>
+</body>
+</html>
