@@ -44,11 +44,9 @@
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-    <link rel="preconnect" href="https://backend.intelbras.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons CDN -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
@@ -60,6 +58,7 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
                     },
                     colors: {
                         navy: {
@@ -76,47 +75,32 @@
             }
         }
     </script>
-    <style>
-        @keyframes pulse-ring {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-        .whatsapp-pulse { animation: pulse-ring 2.5s infinite; }
-        @media (prefers-reduced-motion: reduce) {
-            .whatsapp-pulse { animation: none; }
-            html { scroll-behavior: auto !important; }
-        }
-        /* Fundos das seções */
-        .bg-dots { background-color: #f8fafc; background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px); background-size: 22px 22px; }
-        .bg-grid { background-color: #ffffff; background-image: linear-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.14) 1px, transparent 1px); background-size: 40px 40px; }
-        .bg-glow-blue { background-color: #f8fafc; background-image: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.12), transparent 55%), radial-gradient(ellipse at bottom left, rgba(14, 165, 233, 0.10), transparent 50%); }
-        .bg-soft-blue { background-image: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%); }
-        #inicio { background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px), linear-gradient(to bottom, #eff6ff, #ffffff 65%, #ffffff); background-size: 22px 22px, 100% 100%; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- CABEÇALHO -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-lg">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-white/10 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#inicio" class="flex flex-col leading-none group" aria-label="M7 Tecnologia & Segurança - ir para o início">
                     <span class="font-mono font-bold text-[28px] sm:text-[32px] tracking-tight leading-none">
-                        <span class="text-blue-600">&lt;</span><span class="text-slate-900">M7</span><span class="text-blue-600">/&gt;</span>
+                        <span class="text-cyan-400">&lt;</span><span class="text-white">M7</span><span class="text-cyan-400">/&gt;</span>
                     </span>
-                    <span class="font-mono font-bold text-[10px] sm:text-[11px] text-blue-600 tracking-wide mt-1.5">TECNOLOGIA &amp; SEGURANÇA</span>
-                    <span class="hidden sm:block font-mono text-[9px] text-slate-500 tracking-wide mt-1">TI · REDES · CFTV · AUTOMAÇÃO</span>
+                    <span class="font-mono font-bold text-[10px] sm:text-[11px] text-cyan-400 tracking-wide mt-1.5">TECNOLOGIA &amp; SEGURANÇA</span>
+                    <span class="hidden sm:block font-mono text-[9px] text-slate-400 tracking-wide mt-1">TI · REDES · CFTV · AUTOMAÇÃO</span>
                 </a>
 
                 <nav class="hidden lg:flex items-center gap-7">
-                    <a href="#inicio" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Início</a>
-                    <a href="#ti-redes" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">TI & Redes</a>
-                    <a href="#seguranca" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Segurança</a>
-                    <a href="#equipamentos" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Equipamentos</a>
-                    <a href="#catalogo" data-cat-link class="hidden text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Catálogo de Preços</a>
-                    <a href="#orcamento" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Solicitar Orçamento</a>
-                    <a href="#sobre" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Sobre</a>
+                    <a href="#inicio" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Início</a>
+                    <a href="#ti-redes" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">TI & Redes</a>
+                    <a href="#seguranca" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Segurança</a>
+                    <a href="#acesso" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Acesso</a>
+                    <a href="#portoes" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Portões</a>
+                    <a href="#equipamentos" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Equipamentos</a>
+                    <a href="#catalogo" data-cat-link class="hidden text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Catálogo de Preços</a>
+                    <a href="#orcamento" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Solicitar Orçamento</a>
+                    <a href="#sobre" class="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-colors">Sobre</a>
                 </nav>
 
                 <div class="flex items-center gap-3">
@@ -127,7 +111,7 @@
                         <span>Solicitar Orçamento</span>
                     </a>
 
-                    <button id="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:text-blue-600 hover:bg-slate-100 focus:outline-none">
+                    <button id="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2.5 rounded-xl text-slate-200 hover:text-cyan-300 hover:bg-white/10 focus:outline-none">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -135,15 +119,17 @@
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1.5 shadow-2xl">
-            <a href="#inicio" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Início</a>
-            <a href="#ti-redes" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">TI & Redes</a>
-            <a href="#seguranca" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Segurança Eletrônica</a>
-            <a href="#equipamentos" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Equipamentos Intelbras</a>
-            <a href="#catalogo" data-cat-link class="mobile-link hidden px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Catálogo de Preços</a>
-            <a href="#orcamento" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Solicitar Orçamento</a>
-            <a href="#sobre" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Sobre</a>
-            <a href="#localizacao" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600">Localização</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-white/10 px-4 pt-2 pb-6 space-y-1.5 shadow-2xl">
+            <a href="#inicio" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Início</a>
+            <a href="#ti-redes" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">TI & Redes</a>
+            <a href="#seguranca" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Segurança Eletrônica</a>
+            <a href="#acesso" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Controle de Acesso</a>
+            <a href="#portoes" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Portões Automáticos</a>
+            <a href="#equipamentos" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Equipamentos Intelbras</a>
+            <a href="#catalogo" data-cat-link class="mobile-link hidden px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Catálogo de Preços</a>
+            <a href="#orcamento" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Solicitar Orçamento</a>
+            <a href="#sobre" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Sobre</a>
+            <a href="#localizacao" class="mobile-link block px-3.5 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-cyan-300">Localização</a>
             <div class="pt-3">
                 <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
                    target="_blank" rel="noopener noreferrer"
@@ -156,320 +142,53 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
-        <section id="inicio" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-gradient-to-b from-blue-50 via-white to-white overflow-hidden">
-            <div class="absolute inset-0 opacity-15 pointer-events-none">
-                <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-500 blur-3xl"></div>
-                <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-sky-400 blur-3xl"></div>
-            </div>
-
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs sm:text-sm font-semibold mb-5">
-                            <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
-                            <span>Atendimento Especializado em Ribeirão Preto – SP e região</span>
+        <!-- HERO -->
+        <section id="inicio" class="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider mb-6"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Ribeirão Preto – SP e região</span>
+                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight mb-6">TI e <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500">segurança eletrônica</span> em Ribeirão Preto</h1>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">Redes, suporte técnico, câmeras, alarmes, controle de acesso e portões automáticos. A M7 cuida da tecnologia da sua casa e da sua empresa, com diagnóstico claro e instalação profissional.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Vim%20pelo%20site%20da%20M7%20e%20gostaria%20de%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all hover:-translate-y-0.5"><i data-lucide="message-circle" class="w-4 h-4 fill-current"></i><span>Pedir orçamento</span></a>
+                        <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Preciso%20de%20suporte%20remoto%20para%20o%20meu%20computador." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-cyan-400/40 text-cyan-200 font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all hover:-translate-y-0.5"><i data-lucide="message-circle" class="w-4 h-4 fill-current"></i><span>Suporte remoto</span></a>
+                    </div>
+                    <ul class="flex flex-wrap gap-x-8 gap-y-3 text-sm font-mono text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="file-check-2" class="w-4 h-4 text-cyan-400"></i>CNPJ Ativo &amp; Nota Fiscal</li>
+                        <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>+15 Anos de Experiência</li>
+                        <li class="flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>Diagnóstico com Clareza</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-5">
+                    <div id="sr-card" class="m7-glow rounded-2xl border border-cyan-400/20 bg-slate-900/70 backdrop-blur overflow-hidden shadow-2xl shadow-cyan-500/10" role="group" aria-roledescription="carrossel" aria-label="Suporte remoto e presencial">
+                        <div class="relative h-56 sm:h-64 bg-slate-950 overflow-hidden">
+                            <img src="img/suporte-rede-cabos.webp" alt="Switch de rede com cabos conectados" width="800" height="500" loading="eager" fetchpriority="high" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover is-active"><img src="img/suporte-computadores.webp" alt="Mesa de trabalho com computadores e monitores" width="800" height="500" loading="lazy" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover"><img src="img/suporte-placa-mae.webp" alt="Instalação de processador em placa-mãe" width="800" height="500" loading="lazy" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover"><img src="img/suporte-telas.webp" alt="Monitores em mesa de trabalho" width="800" height="500" loading="lazy" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover"><img src="img/suporte-servidores.webp" alt="Servidores em rack com iluminação azul" width="800" height="500" loading="lazy" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover"><img src="img/suporte-placa-zoom.webp" alt="Detalhe de placa-mãe" width="800" height="500" loading="lazy" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover"><img src="img/suporte-fundo-pc.webp" alt="Parte traseira de um computador com cabos" width="800" height="500" loading="lazy" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover"><img src="img/suporte-teclado.webp" alt="Teclado de notebook em close" width="800" height="500" loading="lazy" decoding="async" class="sr-slide absolute inset-0 w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20"></div>
+                            <span class="absolute top-3 left-3 inline-flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-slate-950/70 border border-cyan-400/30 text-cyan-300"><i data-lucide="monitor-cog" class="w-3.5 h-3.5"></i>Suporte remoto</span>
+                            <span class="absolute top-3 right-3 inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>atendimento ativo</span>
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-slate-950/60"><button type="button" class="sr-dot is-active" aria-label="Ver slide 1 de 8"></button><button type="button" class="sr-dot" aria-label="Ver slide 2 de 8"></button><button type="button" class="sr-dot" aria-label="Ver slide 3 de 8"></button><button type="button" class="sr-dot" aria-label="Ver slide 4 de 8"></button><button type="button" class="sr-dot" aria-label="Ver slide 5 de 8"></button><button type="button" class="sr-dot" aria-label="Ver slide 6 de 8"></button><button type="button" class="sr-dot" aria-label="Ver slide 7 de 8"></button><button type="button" class="sr-dot" aria-label="Ver slide 8 de 8"></button></div>
                         </div>
-
-                        <div class="mb-3">
-                            <span class="text-blue-600 font-extrabold tracking-wide uppercase text-sm sm:text-base">
-                                M7 Tecnologia & Segurança
-                            </span>
-                        </div>
-
-                        <h1 class="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight tracking-tight mb-6">
-                            Sua casa <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">protegida</span>. Sua internet <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">sempre no ar</span>.
-                        </h1>
-
-                        <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                            Câmeras que você vê no celular, alarme, portão automático e Wi-Fi que pega em todos os cômodos. A M7 cuida da tecnologia da sua casa para você cuidar do que importa.
-                        </p>
-
-                        <div class="mb-8 max-w-2xl mx-auto lg:mx-0">
-                            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-3">
-                                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-bold shadow-md shadow-blue-600/30">
-                                    <i data-lucide="home" class="w-4 h-4"></i>
-                                    Residências · nosso foco
-                                </span>
-                                <span class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold">
-                                    <i data-lucide="store" class="w-4 h-4 text-blue-600"></i>
-                                    Pequeno comércio
-                                </span>
-                                <span class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold">
-                                    <i data-lucide="building-2" class="w-4 h-4 text-blue-600"></i>
-                                    Empresas de porte
-                                </span>
-                            </div>
-                            <p class="text-blue-700 font-semibold text-sm sm:text-base text-center lg:text-left">
-                                Da casa ao grande negócio: atendemos todos, com o mesmo cuidado.
-                            </p>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Vim%20pelo%20site%20da%20M7%20e%20gostaria%20de%20or%C3%A7amento." 
-                               target="_blank" rel="noopener noreferrer"
-                               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-base px-7 py-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5">
-                                <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
-                                <span>Chamar no WhatsApp (16) 99178-0786</span>
-                            </a>
-
-                            <a href="#orcamento" 
-                               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 border border-slate-200 font-semibold text-base px-7 py-4 rounded-xl transition-all">
-                                <span>Solicitar Orçamento</span>
-                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-
-                        <div class="mt-10 pt-8 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600 shrink-0">
-                                    <i data-lucide="file-check-2" class="w-4 h-4"></i>
-                                </div>
-                                <span class="text-xs sm:text-sm text-slate-600 font-medium">CNPJ Ativo & Nota Fiscal</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600 shrink-0">
-                                    <i data-lucide="shield-check" class="w-4 h-4"></i>
-                                </div>
-                                <span class="text-xs sm:text-sm text-slate-600 font-medium">+15 Anos de Experiência</span>
-                            </div>
-                            <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
-                                <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600 shrink-0">
-                                    <i data-lucide="zap" class="w-4 h-4"></i>
-                                </div>
-                                <span class="text-xs sm:text-sm text-slate-600 font-medium">Diagnóstico com Clareza</span>
-                            </div>
+                        <div class="p-5 sm:p-6">
+                            <div class="grid min-h-[5.5rem] sm:min-h-[6rem] mb-5"><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug is-active">Rede caiu ou PC travou? A M7 te socorre por acesso remoto ou no local.</p><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug">Seu socorro de TI em Ribeirão Preto: rápido, direto e do jeito que você precisa — remoto ou presencial. Fale com a M7.</p><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug">PC, notebook ou rede com problema? Resolvemos remoto ou vamos até você. M7 Tecnologia &amp; Segurança.</p><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug">Rede caiu ou PC travou? A M7 te socorre por acesso remoto ou no local.</p><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug">Seu socorro de TI em Ribeirão Preto: rápido, direto e do jeito que você precisa — remoto ou presencial. Fale com a M7.</p><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug">PC, notebook ou rede com problema? Resolvemos remoto ou vamos até você. M7 Tecnologia &amp; Segurança.</p><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug">Rede caiu ou PC travou? A M7 te socorre por acesso remoto ou no local.</p><p class="sr-text col-start-1 row-start-1 font-display font-bold text-lg sm:text-xl text-white leading-snug">Seu socorro de TI em Ribeirão Preto: rápido, direto e do jeito que você precisa — remoto ou presencial. Fale com a M7.</p></div>
+                            <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Preciso%20de%20suporte%20de%20TI%20(remoto%20ou%20presencial)." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm py-3 px-4 rounded-xl shadow-md transition-all"><i data-lucide="message-circle" class="w-4 h-4 fill-current"></i><span>Pedir suporte agora</span></a>
+                            <p class="mt-3 text-[11px] font-mono text-slate-500">responsável: Maicon Souza</p>
                         </div>
                     </div>
-
-                    <div class="lg:col-span-5">
-                        <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-xl">
-                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-                                </div>
-                                <span class="text-xs font-mono text-blue-600 font-semibold">M7_TECNOLOGIA_SEGURANCA</span>
-                            </div>
-
-                            <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
-                                <div class="relative h-36 sm:h-40 bg-slate-200">
-                                    <img src="https://images.unsplash.com/photo-1712159018726-4564d92f3ec2?fm=jpg&q=70&w=700&auto=format&fit=crop"
-                                         alt="Atendente de suporte técnico com headset em frente ao computador" width="700" height="467" loading="eager" fetchpriority="high" decoding="async"
-                                         class="w-full h-full object-cover object-top"
-                                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/f1f5f9/0f172a?text=Suporte+Remoto'">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent"></div>
-                                    <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">
-                                        <i data-lucide="monitor-cog" class="w-3.5 h-3.5"></i>
-                                        <span>Suporte Remoto</span>
-                                    </span>
-                                </div>
-                                <div class="p-4">
-                                    <h3 class="text-slate-900 font-bold text-base sm:text-lg leading-snug">Você precisa de ajuda para o seu computador?</h3>
-                                    <p class="text-blue-700 font-semibold text-sm mt-1.5 leading-snug">
-                                        Computador lento ou travando? Resolvemos à distância, sem você sair de casa.
-                                    </p>
-                                    <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Preciso%20de%20suporte%20remoto%20para%20o%20meu%20computador."
-                                       target="_blank" rel="noopener noreferrer"
-                                       class="mt-4 inline-flex w-full items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm py-3 px-4 rounded-xl shadow-sm transition-all">
-                                        <i data-lucide="message-circle" class="w-4 h-4 fill-slate-950"></i>
-                                        <span>Pedir suporte agora</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
-                                <span>Responsável: <strong class="text-slate-900">Maicon Souza</strong></span>
-                                <span class="inline-flex items-center gap-1.5 text-emerald-600 font-medium">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Atendimento Ativo
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                    <script>
+                    (function(){
+                        var r=document.getElementById('sr-card'),sl=r.querySelectorAll('.sr-slide'),tx=r.querySelectorAll('.sr-text'),dt=r.querySelectorAll('.sr-dot'),i=0,t=null;
+                        var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+                        function show(n){i=(n+sl.length)%sl.length;[sl,tx,dt].forEach(function(g){g.forEach(function(e,k){e.classList.toggle('is-active',k===i)})})}
+                        function stop(){clearInterval(t);t=null} function start(){if(!red&&!t)t=setInterval(function(){show(i+1)},4000)}
+                        dt.forEach(function(d,k){d.addEventListener('click',function(){show(k);stop();start()})});
+                        r.addEventListener('mouseenter',stop);r.addEventListener('mouseleave',start);r.addEventListener('focusin',stop);r.addEventListener('focusout',start);
+                        document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});start();
+                    })();
+                    </script>
                 </div>
             </div>
         </section>
 
-        <!-- BANNER ROTATIVO DE PRODUTOS (AMT 2018 E SMART + FECHADURA FE 20150) -->
-        <section id="banner-produtos" class="py-6 sm:py-8 bg-white" aria-roledescription="carousel" aria-label="Produtos em destaque">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div id="m7-carousel" class="relative">
-                    <div class="grid" id="m7-track">
-                    <div class="m7-slide col-start-1 row-start-1 transition-opacity duration-700 opacity-100" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 de 2: Central de alarme AMT 2018 E SMART" >
-<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 shadow-xl border border-slate-800">
-                    <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-sky-500/20 blur-3xl pointer-events-none"></div>
-                    <div class="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-8 p-4 sm:p-6 lg:px-10 lg:py-6">
-                        <div class="order-2 lg:order-1">
-                            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
-                                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-                                <span>Central de alarme monitorada</span>
-                            </span>
-                            <h2 class="font-extrabold text-xl sm:text-2xl lg:text-3xl text-white leading-tight mb-1">
-                                AMT 2018 E SMART
-                            </h2>
-                            <p class="text-sky-300 font-semibold text-sm sm:text-base mb-2">Sistema Smart</p>
-                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4 max-w-xl">
-                                A central AMT 2018 E Smart agora conta com supervisionamento dos dispositivos sem fio, tornando a solução ainda mais segura.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20or%C3%A7amento%20da%20central%20de%20alarme%20AMT%202018%20E%20SMART."
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm sm:text-base px-5 py-2.5 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
-                                    <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
-                                    <span>Solicitar orçamento</span>
-                                </a>
-                                <a href="#equipamentos"
-                                   class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm sm:text-base px-5 py-2.5 rounded-xl transition-colors">
-                                    <span>Ver equipamentos</span>
-                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="order-1 lg:order-2">
-                            <div class="bg-white rounded-2xl p-3 shadow-lg flex items-center justify-center">
-                                <img src="https://backend.intelbras.com/sites/default/files/styles/large/public/2022-10/sistema-smart-amt-2018-e-smart.jpg"
-                                     alt="Sistema Smart com central de alarme AMT 2018 E SMART Intelbras"
-                                     width="600" height="400" loading="lazy" decoding="async"
-                                     class="w-full max-h-40 sm:max-h-48 object-contain"
-                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=AMT+2018+E+SMART'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    </div>
-                    <div class="m7-slide col-start-1 row-start-1 transition-opacity duration-700 opacity-0 pointer-events-none" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 de 2: Fechadura eletroímã FE 20150" aria-hidden="true">
-<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 shadow-xl border border-slate-800">
-                    <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-sky-500/20 blur-3xl pointer-events-none"></div>
-                    <div class="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-8 p-4 sm:p-6 lg:px-10 lg:py-6">
-                        <div class="order-2 lg:order-1">
-                            <div class="bg-white rounded-2xl p-2 shadow-lg">
-                                <img id="fe-main" src="img/fe20150-kit.webp"
-                                     alt="Kit de controle de acesso com fechadura eletroímã FE 20150 Intelbras e botão de saída"
-                                     width="800" height="826" loading="lazy" decoding="async"
-                                     class="w-full max-h-40 sm:max-h-48 object-contain rounded-xl">
-                            </div>
-                            <div class="flex items-center justify-center gap-2 mt-2">
-                                <button type="button" data-fe-thumb="img/fe20150-kit.webp" aria-label="Ver kit completo"
-                                        class="fe-thumb w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white p-1 border-2 border-sky-400 overflow-hidden">
-                                    <img src="img/fe20150-kit.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full object-cover rounded-lg">
-                                </button>
-                                <button type="button" data-fe-thumb="img/fe20150-portas.webp" aria-label="Ver instalação em porta de vidro"
-                                        class="fe-thumb w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white p-1 border-2 border-transparent overflow-hidden">
-                                    <img src="img/fe20150-portas.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full object-cover rounded-lg">
-                                </button>
-                                <button type="button" data-fe-thumb="img/fe20150-ima.webp" aria-label="Ver eletroímã"
-                                        class="fe-thumb w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white p-1 border-2 border-transparent overflow-hidden">
-                                    <img src="img/fe20150-ima.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full object-contain rounded-lg">
-                                </button>
-                            </div>
-                        </div>
-                        <div class="order-1 lg:order-2">
-                            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
-                                <i data-lucide="lock-keyhole" class="w-3.5 h-3.5"></i>
-                                <span>Controle de acesso</span>
-                            </span>
-                            <h2 class="font-extrabold text-xl sm:text-2xl lg:text-3xl text-white leading-tight mb-1">
-                                Fechadura Eletroímã FE 20150
-                            </h2>
-                            <p class="text-sky-300 font-semibold text-sm sm:text-base mb-2">Controle de acesso em um só kit</p>
-                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4 max-w-xl">
-                                Travamento magnético com acionamento de saída. Prática e adaptável à instalação, pode ser instalada em portas que abrem para dentro ou para fora, com desníveis de até 20 mm.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20or%C3%A7amento%20da%20fechadura%20eletro%C3%ADm%C3%A3%20FE%2020150."
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm sm:text-base px-5 py-2.5 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5">
-                                    <i data-lucide="message-circle" class="w-5 h-5 fill-slate-950"></i>
-                                    <span>Solicitar orçamento</span>
-                                </a>
-                                <a href="#equipamentos"
-                                   class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm sm:text-base px-5 py-2.5 rounded-xl transition-colors">
-                                    <span>Ver equipamentos</span>
-                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    </div>
-                    </div>
-                    <button type="button" id="m7-prev" aria-label="Banner anterior"
-                            class="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-white/90 hover:bg-white text-slate-900 shadow-lg z-10">
-                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                    </button>
-                    <button type="button" id="m7-next" aria-label="Próximo banner"
-                            class="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-white/90 hover:bg-white text-slate-900 shadow-lg z-10">
-                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                    </button>
-                    <div class="flex items-center justify-center gap-2 mt-3" id="m7-dots">
-                        <button type="button" class="m7-dot h-2.5 rounded-full bg-sky-500 w-8 transition-all" data-go="0" aria-label="Ir para o banner 1"></button>
-                        <button type="button" class="m7-dot h-2.5 rounded-full bg-slate-300 w-2.5 transition-all" data-go="1" aria-label="Ir para o banner 2"></button>
-                    </div>
-                </div>
-            </div>
-            <script>
-                (function () {
-                    // Galeria de miniaturas da FE 20150
-                    var main = document.getElementById('fe-main');
-                    var thumbs = document.querySelectorAll('.fe-thumb');
-                    thumbs.forEach(function (b) {
-                        b.addEventListener('click', function () {
-                            main.src = b.getAttribute('data-fe-thumb');
-                            thumbs.forEach(function (t) { t.classList.remove('border-sky-400'); t.classList.add('border-transparent'); });
-                            b.classList.remove('border-transparent'); b.classList.add('border-sky-400');
-                        });
-                    });
-
-                    // Carrossel rotativo
-                    var root = document.getElementById('m7-carousel');
-                    var slides = root.querySelectorAll('.m7-slide');
-                    var dots = root.querySelectorAll('.m7-dot');
-                    var cur = 0, timer = null, INTERVAL = 4000;
-                    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-                    function show(n) {
-                        cur = (n + slides.length) % slides.length;
-                        slides.forEach(function (sl, i) {
-                            var on = i === cur;
-                            sl.classList.toggle('opacity-100', on);
-                            sl.classList.toggle('opacity-0', !on);
-                            sl.classList.toggle('pointer-events-none', !on);
-                            if (on) sl.removeAttribute('aria-hidden'); else sl.setAttribute('aria-hidden', 'true');
-                        });
-                        dots.forEach(function (d, i) {
-                            d.className = 'm7-dot h-2.5 rounded-full transition-all ' + (i === cur ? 'bg-sky-500 w-8' : 'bg-slate-300 w-2.5');
-                        });
-                    }
-                    function start() { if (reduce || timer) return; timer = setInterval(function () { show(cur + 1); }, INTERVAL); }
-                    function stop() { clearInterval(timer); timer = null; }
-
-                    document.getElementById('m7-prev').addEventListener('click', function () { show(cur - 1); stop(); start(); });
-                    document.getElementById('m7-next').addEventListener('click', function () { show(cur + 1); stop(); start(); });
-                    dots.forEach(function (d) { d.addEventListener('click', function () { show(+d.dataset.go); stop(); start(); }); });
-
-                    root.addEventListener('mouseenter', stop);
-                    root.addEventListener('mouseleave', start);
-                    root.addEventListener('focusin', stop);
-                    root.addEventListener('focusout', start);
-
-                    // Deslizar no celular
-                    var x0 = null;
-                    root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; stop(); }, { passive: true });
-                    root.addEventListener('touchend', function (e) {
-                        if (x0 !== null) {
-                            var dx = e.changedTouches[0].clientX - x0;
-                            if (Math.abs(dx) > 50) show(dx < 0 ? cur + 1 : cur - 1);
-                        }
-                        x0 = null; start();
-                    }, { passive: true });
-
-                    // Pausa quando a aba não está visível
-                    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
-                    start();
-                })();
-            </script>
-        </section>
 
         <!-- SEÇÃO TI & REDES -->
         <section id="ti-redes" class="py-14 bg-glow-blue">
@@ -487,9 +206,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div id="card-redes" class="scroll-mt-24 group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 transition-all flex flex-col">
                         <div class="relative h-44 overflow-hidden bg-slate-200">
-                            <img src="https://images.unsplash.com/photo-1750711731797-25c3f2551ff8?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Switch de rede com cabos ethernet conectados" width="700" height="467" loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/f1f5f9/0f172a?text=M7+Tecnologia'">
+                            <img src="img/ti-switch-rede.webp" alt="Switch de rede com cabos ethernet conectados" width="700" height="467" loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">Redes</span>
                         </div>
@@ -511,9 +229,8 @@
 
                     <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 transition-all flex flex-col">
                         <div class="relative h-44 overflow-hidden bg-slate-200">
-                            <img src="https://images.unsplash.com/photo-1676636810289-2ac22579d988?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Técnico fazendo manutenção em notebook com ferramentas" width="700" height="467" loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/f1f5f9/0f172a?text=M7+Tecnologia'">
+                            <img src="img/ti-manutencao-notebook.webp" alt="Técnico fazendo manutenção em notebook com ferramentas" width="700" height="467" loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">Manutenção</span>
                         </div>
@@ -535,9 +252,8 @@
 
                     <div id="card-empresas" class="scroll-mt-24 group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 transition-all flex flex-col">
                         <div class="relative h-44 overflow-hidden bg-slate-200">
-                            <img src="https://images.unsplash.com/photo-1765371512336-99c2b1c6975f?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Escritório moderno com computadores" width="700" height="467" loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/f1f5f9/0f172a?text=M7+Tecnologia'">
+                            <img src="img/ti-escritorio.webp" alt="Escritório moderno com computadores" width="700" height="488" loading="lazy" decoding="async"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-blue-700">Empresas</span>
                         <span class="absolute top-3 right-3 z-10 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full shadow">Foco Empresarial</span>
@@ -562,22 +278,22 @@
         </section>
 
         <!-- SEÇÃO SEGURANÇA ELETRÔNICA -->
-        <section id="seguranca" class="py-20 bg-grid border-t border-slate-200/70">
+        <section id="seguranca" class="py-20 m7-dark">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-wider">Proteção Patrimonial</span>
-                    <h2 class="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 mt-2 mb-4">
+                    <span class="text-cyan-300 font-mono font-bold text-xs sm:text-sm uppercase tracking-wider">Proteção Patrimonial</span>
+                    <h2 class="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white mt-2 mb-4">
                         Segurança Eletrônica & Automação de Acesso
                     </h2>
-                    <p class="text-slate-600 text-base sm:text-lg">
+                    <p class="text-slate-300 text-base sm:text-lg">
                         Proteja sua família, seu comércio e sua empresa com equipamentos confiáveis, acabamento limpo e controle na palma da mão.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1563920443079-783e5c786b83?fm=jpg&q=70&w=900&auto=format&fit=crop');">
-                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center min-h-[22rem]">
+                        <img src="img/camera-speed-dome-vip-3225-sd-ir-ia.webp" alt="Câmera speed dome Intelbras com a cidade ao fundo" width="700" height="478" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[78%_center]">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/55 to-slate-950/15 pointer-events-none"></div>
                         <div class="relative">
                             <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
                                 <i data-lucide="cctv" class="w-6 h-6"></i>
@@ -588,13 +304,13 @@
                             </p>
                         </div>
                         <div class="relative">
-                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Acesso pelo Celular</span>
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-slate-950/70 border border-white/20 px-3 py-1 rounded-md">Acesso pelo Celular</span>
                         </div>
                     </div>
 
-                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1533052439013-45751c7b7dc2?fm=jpg&q=70&w=900&auto=format&fit=crop');">
-                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center min-h-[22rem]">
+                        <img src="img/amt-2018-teclado-bateria.webp" alt="Central de alarme AMT 2018 com teclado e bateria Intelbras" width="590" height="360" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/55 to-slate-950/15 pointer-events-none"></div>
                         <div class="relative">
                             <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
                                 <i data-lucide="bell-ring" class="w-6 h-6"></i>
@@ -605,13 +321,13 @@
                             </p>
                         </div>
                         <div class="relative">
-                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Monitoramento Inteligente</span>
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-slate-950/70 border border-white/20 px-3 py-1 rounded-md">Monitoramento Inteligente</span>
                         </div>
                     </div>
 
-                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
-                         style="background-image: url('/img/banner-cercas.webp')"></div>
-                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center min-h-[22rem]">
+                        <img src="img/banner-cercas.webp" alt="Cerca elétrica e concertina em muro residencial" width="1280" height="853" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[70%_center]">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/55 to-slate-950/15 pointer-events-none"></div>
                         <div class="relative">
                             <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
                                 <i data-lucide="shield-alert" class="w-6 h-6"></i>
@@ -622,13 +338,13 @@
                             </p>
                         </div>
                         <div class="relative">
-                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Proteção Perimetral</span>
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-slate-950/70 border border-white/20 px-3 py-1 rounded-md">Proteção Perimetral</span>
                         </div>
                     </div>
 
-                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1626819171158-74e6ef658c10?fm=jpg&q=70&w=900&auto=format&fit=crop');">
-                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/80 to-slate-950/95 pointer-events-none"></div>
+                    <div class="relative overflow-hidden rounded-2xl p-6 border border-slate-800 hover:border-blue-500/60 hover:shadow-lg transition-all flex flex-col justify-between bg-slate-900 bg-cover bg-center min-h-[22rem]">
+                        <img src="img/portao-basculante-f2000-plus.webp" alt="Motor para portão basculante F2000 Plus" width="307" height="800" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-bottom">
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/55 to-slate-950/15 pointer-events-none"></div>
                         <div class="relative">
                             <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-600/20">
                                 <i data-lucide="door-open" class="w-6 h-6"></i>
@@ -639,7 +355,7 @@
                             </p>
                         </div>
                         <div class="relative">
-                            <span class="inline-block text-xs font-semibold text-sky-200 bg-white/10 border border-white/20 px-3 py-1 rounded-md">Conforto & Agilidade</span>
+                            <span class="inline-block text-xs font-semibold text-sky-200 bg-slate-950/70 border border-white/20 px-3 py-1 rounded-md">Conforto & Agilidade</span>
                         </div>
                     </div>
                 </div>
@@ -659,6 +375,79 @@
             </div>
         </section>
 
+        <!-- CONTROLE DE ACESSO -->
+        <section id="acesso" class="py-20 bg-slate-50 border-t border-slate-200/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mb-12"><span class="text-blue-600 font-mono font-bold text-xs uppercase tracking-wider">Controle de acesso</span>
+                    <h2 class="font-display font-extrabold text-3xl lg:text-4xl text-slate-900 mt-2 mb-3">Quem entra, quando e como: você controla</h2>
+                    <p class="text-slate-600">Interfone com reconhecimento facial e fechadura eletroímã Intelbras, instalados e configurados pela M7.</p></div>
+                <div class="grid md:grid-cols-2 gap-7">
+                    <article class="m7-card rounded-2xl bg-white border border-slate-200 overflow-hidden flex flex-col">
+                        <div class="eq-media relative h-64 bg-white border-b border-slate-100" data-multi="1" id="xpe-media">
+                            <img class="eq-slide is-active absolute inset-0 w-full h-full object-contain" src="img/xpe-3200-frontal.webp" alt="Videoporteiro XPE 3200 Plus IP, vista frontal" width="640" height="366" loading="lazy">
+                            <img class="eq-slide absolute inset-0 w-full h-full object-contain" src="img/xpe-3200-perspectiva.webp" alt="Videoporteiro XPE 3200 Plus IP, em perspectiva" width="640" height="366" loading="lazy"></div>
+                        <div class="p-6 flex flex-col flex-1"><span class="text-blue-600 font-mono text-[11px] font-bold uppercase">Interfone facial</span>
+                            <h3 class="font-display font-extrabold text-xl text-slate-900 mt-1 mb-2">XPE 3200 Plus IP</h3>
+                            <p class="text-slate-600 text-sm mb-5">Videoporteiro com reconhecimento facial e QR Code.</p>
+                            <div class="mt-auto"><a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20or%C3%A7amento%20do%20videoporteiro%20XPE%203200%20Plus%20IP." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all hover:-translate-y-0.5"><i data-lucide="message-circle" class="w-4 h-4 fill-current"></i><span>Orçamento do XPE 3200</span></a></div></div>
+                    </article>
+                    <article class="m7-card rounded-2xl bg-white border border-slate-200 overflow-hidden flex flex-col">
+                        <div class="relative h-64 bg-white border-b border-slate-100 flex items-center justify-center"><img id="fe-main" src="img/fe20150-kit.webp" alt="Kit com fechadura eletroímã FE 20150 Intelbras e botão de saída" width="800" height="826" loading="lazy" class="max-h-full object-contain">
+                            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                                <button type="button" data-fe-thumb="img/fe20150-kit.webp" aria-label="Ver kit completo" class="fe-thumb w-10 h-10 rounded-lg bg-white p-1 border-2 border-cyan-500 overflow-hidden"><img src="img/fe20150-kit.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full object-cover rounded"></button><button type="button" data-fe-thumb="img/fe20150-portas.webp" aria-label="Ver em porta de vidro" class="fe-thumb w-10 h-10 rounded-lg bg-white p-1 border-2 border-slate-200 overflow-hidden"><img src="img/fe20150-portas.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full object-cover rounded"></button><button type="button" data-fe-thumb="img/fe20150-ima.webp" aria-label="Ver eletroímã" class="fe-thumb w-10 h-10 rounded-lg bg-white p-1 border-2 border-slate-200 overflow-hidden"><img src="img/fe20150-ima.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full object-cover rounded"></button>
+                            </div></div>
+                        <div class="p-6 flex flex-col flex-1"><span class="text-blue-600 font-mono text-[11px] font-bold uppercase">Fechadura eletroímã</span>
+                            <h3 class="font-display font-extrabold text-xl text-slate-900 mt-1 mb-2">FE 20150</h3>
+                            <p class="text-slate-600 text-sm mb-5">Travamento magnético com acionamento de saída, em portas que abrem para dentro ou para fora.</p>
+                            <div class="mt-auto"><a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Gostaria%20de%20or%C3%A7amento%20da%20fechadura%20eletro%C3%ADm%C3%A3%20FE%2020150." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all hover:-translate-y-0.5"><i data-lucide="message-circle" class="w-4 h-4 fill-current"></i><span>Orçamento da FE 20150</span></a></div></div>
+                    </article>
+                </div>
+            </div>
+            <script>
+            (function(){
+                var m=document.getElementById('fe-main'),t=document.querySelectorAll('.fe-thumb');
+                t.forEach(function(b){b.addEventListener('click',function(){m.src=b.getAttribute('data-fe-thumb');t.forEach(function(x){x.classList.replace('border-cyan-500','border-slate-200')});b.classList.replace('border-slate-200','border-cyan-500')})});
+                var box=document.getElementById('xpe-media'),sl=box.querySelectorAll('.eq-slide'),i=0,r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if(!r)setInterval(function(){sl[i].classList.remove('is-active');i=(i+1)%sl.length;sl[i].classList.add('is-active')},4000);
+            })();
+            </script>
+        </section>
+
+        <!-- AUTOMAÇÃO DE PORTÕES -->
+        <section id="portoes" class="py-20 m7-dark">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+                <div id="pt-box" class="relative rounded-2xl overflow-hidden border border-cyan-400/20 bg-white h-72 lg:h-96 shadow-xl shadow-cyan-500/10">
+                    <img src="img/portao-basculante-f2000-plus.webp" alt="Portão basculante F2000 Plus" width="307" height="800" loading="lazy" decoding="async" class="eq-slide pt-slide absolute inset-0 w-full h-full object-contain p-4 is-active"><img src="img/run-2000-condominio.webp" alt="RUN 2000 Condomínio" width="633" height="633" loading="lazy" decoding="async" class="eq-slide pt-slide absolute inset-0 w-full h-full object-contain p-4"><img src="img/motor-pivotante-golden-1500-plus-peccinin.webp" alt="Motor pivotante Golden 1500 Plus (Peccinin)" width="800" height="453" loading="lazy" decoding="async" class="eq-slide pt-slide absolute inset-0 w-full h-full object-contain p-4"><img src="img/cancela-peccinin-widem-barreira-3m.webp" alt="Cancela Peccinin Widem 3 m" width="800" height="577" loading="lazy" decoding="async" class="eq-slide pt-slide absolute inset-0 w-full h-full object-contain p-4">
+                    <span id="pt-cap" class="absolute bottom-3 left-3 max-w-[85%] bg-slate-950/85 text-white font-mono text-xs font-bold px-3 py-1.5 rounded-lg">Portão basculante F2000 Plus</span>
+                </div>
+                <div><span class="text-cyan-300 font-mono font-bold text-xs uppercase tracking-wider">Automação de portões</span>
+                    <h2 class="font-display font-extrabold text-3xl lg:text-4xl text-white mt-2 mb-4">Motores para portão: rápidos, silenciosos e seguros</h2>
+                    <p class="text-slate-300 mb-5">Instalação e reparo de motores basculantes, deslizantes e pivotantes, além de cancelas, com central eletrônica e controles anticlonagem.</p>
+                    <div role="tablist" aria-label="Tipos de portão e cancela" class="flex flex-wrap gap-2 mb-7"><button type="button" role="tab" aria-selected="true" data-msg="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon%21%20Gostaria%20de%20or%C3%A7amento%20de%20Port%C3%A3o%20basculante%20F2000%20Plus." data-name="Portão basculante F2000 Plus" class="pt-tab is-active">BASCULANTE</button><button type="button" role="tab" aria-selected="false" data-msg="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon%21%20Gostaria%20de%20or%C3%A7amento%20de%20RUN%202000%20Condom%C3%ADnio." data-name="RUN 2000 Condomínio" class="pt-tab">DESLIZANTE</button><button type="button" role="tab" aria-selected="false" data-msg="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon%21%20Gostaria%20de%20or%C3%A7amento%20de%20Motor%20pivotante%20Golden%201500%20Plus%20%28Peccinin%29." data-name="Motor pivotante Golden 1500 Plus (Peccinin)" class="pt-tab">PIVOTANTE</button><button type="button" role="tab" aria-selected="false" data-msg="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon%21%20Gostaria%20de%20or%C3%A7amento%20de%20Cancela%20Peccinin%20Widem%203%20m." data-name="Cancela Peccinin Widem 3 m" class="pt-tab">CANCELA</button></div>
+                    <a id="pt-cta" href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon%21%20Gostaria%20de%20or%C3%A7amento%20de%20Port%C3%A3o%20basculante%20F2000%20Plus." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all hover:-translate-y-0.5"><i data-lucide="message-circle" class="w-4 h-4 fill-current"></i><span>Orçamento deste modelo</span></a></div>
+            </div>
+            <script>
+            (function(){
+                var box=document.getElementById('pt-box'),sl=box.querySelectorAll('.pt-slide'),tb=document.querySelectorAll('.pt-tab'),cap=document.getElementById('pt-cap'),cta=document.getElementById('pt-cta'),i=0,t=null;
+                var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+                function show(n){i=(n+sl.length)%sl.length;sl.forEach(function(e,k){e.classList.toggle('is-active',k===i)});tb.forEach(function(e,k){e.classList.toggle('is-active',k===i);e.setAttribute('aria-selected',k===i?'true':'false')});cap.textContent=tb[i].dataset.name;cta.href=tb[i].dataset.msg}
+                function stop(){clearInterval(t);t=null} function start(){if(!red&&!t)t=setInterval(function(){show(i+1)},4000)}
+                tb.forEach(function(b,k){b.addEventListener('click',function(){show(k);stop();start()})});
+                var sec=document.getElementById('portoes');sec.addEventListener('mouseenter',stop);sec.addEventListener('mouseleave',start);sec.addEventListener('focusin',stop);sec.addEventListener('focusout',start);
+                document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});start();
+            })();
+            </script>
+        </section>
+
+        <!-- BANNER: SOLUÇÕES E PROJETOS INTELBRAS -->
+        <div class="py-8 px-4 sm:px-6 bg-slate-50 border-t border-slate-200/70">
+            <section aria-label="Soluções e projetos Intelbras" class="relative max-w-5xl mx-auto rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-950 h-48 sm:h-60 lg:h-72">
+                <img src="img/banner-do-seu-jeito.webp" alt="Terminal facial, central e câmera Intelbras em um corredor de acesso, com duas pessoas caminhando" width="1600" height="584" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[65%_center] sm:object-center">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-transparent pointer-events-none"></div>
+                <h2 class="absolute top-4 left-4 sm:top-6 sm:left-8 max-w-[11rem] sm:max-w-xs font-display font-extrabold text-xl sm:text-3xl text-white leading-tight drop-shadow">Para o ritmo do seu negócio</h2>
+            </section>
+        </div>
+
         <!-- SEÇÃO EQUIPAMENTOS & SOLUÇÕES INTELBRAS -->
         <section id="equipamentos" class="py-20 bg-soft-blue text-slate-900 border-t border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -677,7 +466,7 @@
                     </div>
 
                     <div class="inline-flex p-1.5 rounded-xl bg-white border border-slate-200 self-start lg:self-auto">
-                        <button type="button" onclick="filterEquipments('Todos')" class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-blue-600 text-white shadow-md transition-all cursor-pointer" data-filter="Todos">Todos (8)</button>
+                        <button type="button" onclick="filterEquipments('Todos')" class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-blue-600 text-white shadow-md transition-all cursor-pointer" data-filter="Todos">Todos</button>
                         <button type="button" onclick="filterEquipments('Segurança')" class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-blue-600 transition-all cursor-pointer" data-filter="Segurança">Segurança</button>
                         <button type="button" onclick="filterEquipments('Redes')" class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-blue-600 transition-all cursor-pointer" data-filter="Redes">Redes</button>
                     </div>
@@ -690,7 +479,6 @@
         </section>
 
         <!-- CATÁLOGO DE PREÇOS (lê do Supabase; fica oculto se não houver produtos) -->
-        <style>.cat-car{scrollbar-width:none}.cat-car::-webkit-scrollbar{display:none}</style>
         <section id="catalogo" class="hidden py-20 bg-dots border-t border-slate-200/70">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="max-w-2xl mb-10">
@@ -718,6 +506,11 @@
         </div>
 
         <!-- SEÇÃO ORÇAMENTO RÁPIDO -->
+        <!-- COMO TRABALHAMOS -->
+        <section id="como-trabalhamos" class="py-20 m7-dark"><div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-10"><span class="text-cyan-300 font-mono font-bold text-xs uppercase tracking-wider">Como trabalhamos</span><h2 class="font-display font-extrabold text-3xl lg:text-4xl text-white mt-2">Do diagnóstico ao suporte, em 4 passos</h2></div>
+            <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"><li class="m7-glow rounded-2xl border border-white/10 bg-slate-900/60 p-6"><span class="font-mono font-bold text-cyan-300 text-sm">01</span><i data-lucide="search" class="w-6 h-6 text-cyan-300 mt-3 mb-3"></i><h3 class="font-display font-bold text-white text-lg mb-1.5">Diagnóstico</h3><p class="text-slate-300 text-sm leading-relaxed">Entendemos o problema e o ambiente antes de propor qualquer solução.</p></li><li class="m7-glow rounded-2xl border border-white/10 bg-slate-900/60 p-6"><span class="font-mono font-bold text-cyan-300 text-sm">02</span><i data-lucide="pencil-ruler" class="w-6 h-6 text-cyan-300 mt-3 mb-3"></i><h3 class="font-display font-bold text-white text-lg mb-1.5">Projeto</h3><p class="text-slate-300 text-sm leading-relaxed">Você recebe a solução e o orçamento com clareza, sem surpresas.</p></li><li class="m7-glow rounded-2xl border border-white/10 bg-slate-900/60 p-6"><span class="font-mono font-bold text-cyan-300 text-sm">03</span><i data-lucide="wrench" class="w-6 h-6 text-cyan-300 mt-3 mb-3"></i><h3 class="font-display font-bold text-white text-lg mb-1.5">Instalação</h3><p class="text-slate-300 text-sm leading-relaxed">Execução profissional, com acabamento limpo e testes.</p></li><li class="m7-glow rounded-2xl border border-white/10 bg-slate-900/60 p-6"><span class="font-mono font-bold text-cyan-300 text-sm">04</span><i data-lucide="headset" class="w-6 h-6 text-cyan-300 mt-3 mb-3"></i><h3 class="font-display font-bold text-white text-lg mb-1.5">Suporte</h3><p class="text-slate-300 text-sm leading-relaxed">Acompanhamento depois da entrega, presencial ou remoto.</p></li></ol></div></section>
+
         <section id="orcamento" class="py-20 bg-glow-blue border-t border-slate-200">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-12">
@@ -880,7 +673,7 @@
                 <div class="rounded-3xl overflow-hidden shadow-md border border-slate-200 bg-white">
                     <iframe title="Mapa com a localização da M7 Tecnologia &amp; Segurança em Ribeirão Preto"
                             src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d232.55008048571761!2d-47.80870710393884!3d-21.160304894649055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sanita%20garibaldi%20localidade%20nos%20campos%20eliseos!5e0!3m2!1spt-BR!2sbr!4v1794743433485!5m2!1spt-BR!2sbr"
-                            class="block w-full h-[320px] sm:h-[420px]" style="border:0;"
+                            class="block w-full h-[320px] sm:h-[420px] map-embed"
                             allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
 
@@ -900,6 +693,15 @@
                 </div>
             </div>
         </section>
+
+        <!-- CLIENTES QUE ATENDEMOS -->
+        <section id="clientes" aria-label="Clientes que atendemos" class="py-8 bg-white border-t border-slate-200/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-blue-600 font-mono font-bold text-xs uppercase tracking-wider mb-5">Clientes que atendemos</p>
+                <div class="cl-marquee"><div class="cl-track"><ul class="cl-group" ><li class="cl-tile flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="Coper Peças" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="Delta Tanques" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="Doctor Manutenção – LK Instrumentos Cirúrgicos" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="Coper Peças" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="Delta Tanques" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="Doctor Manutenção – LK Instrumentos Cirúrgicos" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="Coper Peças" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="Delta Tanques" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="Doctor Manutenção – LK Instrumentos Cirúrgicos" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="Coper Peças" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="Delta Tanques" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="Doctor Manutenção – LK Instrumentos Cirúrgicos" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li></ul><ul class="cl-group" aria-hidden="true" ><li class="cl-tile flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-slate-900 border-slate-800 shrink-0"><img src="img/cliente-coper-pecas.webp" alt="" width="600" height="359" loading="lazy" decoding="async" class="h-16 w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-delta-tanques.webp" alt="" width="336" height="228" loading="lazy" decoding="async" class="h-[4.5rem] w-auto object-contain"></li><li class="cl-tile cl-rep flex items-center justify-center h-24 px-5 rounded-xl border bg-white border-slate-200 shrink-0"><img src="img/cliente-doctor-lk.webp" alt="" width="1310" height="363" loading="lazy" decoding="async" class="h-[4.75rem] w-auto object-contain"></li></ul></div></div>
+            </div>
+        </section>
+
     </main>
 
     <!-- RODAPÉ -->
@@ -975,9 +777,8 @@
     <a href="https://wa.me/5516991780786?text=Ol%C3%A1%20Maicon!%20Vim%20pelo%20site%20da%20M7." 
        target="_blank" rel="noopener noreferrer"
        aria-label="Falar com Maicon Souza no WhatsApp (16) 99178-0786"
-       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 font-bold px-4 py-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl whatsapp-pulse transition-transform hover:scale-105">
+       class="fixed bottom-4 right-4 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-whatsapp-500 hover:bg-whatsapp-600 text-slate-950 rounded-full shadow-lg whatsapp-pulse transition-transform hover:scale-105">
         <i data-lucide="message-circle" class="w-6 h-6 fill-slate-950"></i>
-        <span class="hidden sm:inline text-sm">WhatsApp (16) 99178-0786</span>
     </a>
 
     <!-- SCRIPT DE APLICAÇÃO -->
@@ -988,11 +789,41 @@
                 id: 'camera-ip',
                 category: 'Segurança',
                 tag: 'Segurança & CFTV',
-                title: 'Câmera IP Intelbras',
-                description: 'Alta definição Full HD/4K com visão noturna infravermelha, proteção externa e acesso ao vivo direto pelo celular.',
+                title: 'Câmeras IP Intelbras',
+                description: 'O futuro do monitoramento: melhor qualidade de imagem, inteligências que surpreendem e instalação mais simples do que parece. Do acessível ao superprofissional.',
                 highlights: ['Full HD', 'Visão Noturna', 'App Mobile'],
-                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2026-05/vip-1230-d-sc.03.png',
+                images: ['img/camera-ip-ambiente.webp', 'img/camera-ip-produto.webp'],
                 quoteLabel: 'Câmera IP Intelbras'
+            },
+            {
+                id: 'camera-multihd',
+                category: 'Segurança',
+                tag: 'Segurança & CFTV',
+                title: 'Câmeras Multi HD®',
+                description: 'Linha 4 em 1: instale e monitore com a tecnologia de sua escolha, com inteligências para profissionalizar o projeto.',
+                highlights: ['HDCVI', 'AHD', 'HDTVI', 'Analógica'],
+                images: ['img/camera-multihd.webp'],
+                quoteLabel: 'Câmeras Multi HD Intelbras'
+            },
+            {
+                id: 'camera-wifi',
+                category: 'Segurança',
+                tag: 'Segurança & CFTV',
+                title: 'Câmeras Wi-Fi (linha Mibo)',
+                description: 'Cuide da sua segurança dentro ou fora de casa, de qualquer lugar pelo smartphone: da instalação e gravação aos alertas de movimento.',
+                highlights: ['Controle pelo celular', 'Alerta de movimento', 'Gravação'],
+                images: ['img/camera-wifi.webp'],
+                quoteLabel: 'Câmeras Wi-Fi Mibo Intelbras'
+            },
+            {
+                id: 'simplay',
+                category: 'Segurança',
+                tag: 'Software de Monitoramento',
+                title: 'Intelbras S.I.M. Play',
+                description: 'Visualize as imagens de suas câmeras, ao vivo e sem complicações. Tudo em um software gratuito.',
+                highlights: ['Software gratuito', 'Visualizações favoritas', 'Exporta em MP4'],
+                images: ['img/simplay-notebook.webp', 'img/simplay-camera.webp', 'img/simplay-monitor.webp'],
+                quoteLabel: 'Software S.I.M. Play Intelbras'
             },
             {
                 id: 'nvd-intelbras',
@@ -1001,8 +832,18 @@
                 title: 'NVD Intelbras (Gravador de Vídeo em Rede)',
                 description: 'Central inteligente para gravação contínua das câmeras IP com alta capacidade de armazenamento, detecção de movimento e acesso remoto.',
                 highlights: ['Gravação 24/7', 'Gestão IP', 'Backup Seguro'],
-                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2025-05/iNVD%203016-P_persp-esq-1_0.png',
+                image: 'img/produto-nvd.webp',
                 quoteLabel: 'NVD Intelbras (Gravador de Vídeo em Rede)'
+            },
+            {
+                id: 'xpe-3200-plus',
+                category: 'Segurança',
+                tag: 'Controle de Acesso',
+                title: 'XPE 3200 Plus IP',
+                description: 'Videoporteiro com reconhecimento facial e QR Code.',
+                highlights: ['Reconhecimento facial', 'QR Code', 'Videoporteiro IP'],
+                images: ['img/xpe-3200-frontal.webp', 'img/xpe-3200-perspectiva.webp'],
+                quoteLabel: 'Videoporteiro XPE 3200 Plus IP Intelbras'
             },
             {
                 id: 'motor_basculante',
@@ -1011,7 +852,7 @@
                 title: 'Motor Automatizador Basculante de Alta Performance',
                 description: 'Abertura rápida, silenciosa e segura para portões basculantes residenciais e comerciais, com central eletrônica inteligente, fim de curso preciso e controles anticlonagem.',
                 highlights: ['Abertura rápida', 'Destravamento manual', 'Central com rampa suave'],
-                image: 'https://www.niceforyou.com/sites/default/files/styles/800x800_scale/public/2026-05/MAXER-IHS.png?itok=CmiLFfUP' ,
+                image: 'img/produto-motor-basculante.webp' ,
                 quoteLabel: 'Motor Automatizador Basculante de Alta Performance'
             },
             {
@@ -1021,8 +862,18 @@
                 title: 'AMT 2018 E SMART',
                 description: 'A central AMT 2018 E Smart agora conta com supervisionamento dos dispositivos sem fio, tornando a solução ainda mais segura.',
                 highlights: ['Sistema Smart', 'Monitorada', 'Supervisão sem fio'],
-                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2022-10/amt-2018-e-smart-frontal.jpg',
+                image: 'img/produto-amt-2018-e-smart.webp',
                 quoteLabel: 'Central de Alarme AMT 2018 E SMART Intelbras'
+            },
+            {
+                id: 'ivp-7000-smart-ex',
+                category: 'Segurança',
+                tag: 'Alarmes',
+                title: 'IVP 7000 SMART EX',
+                description: 'Sensor infravermelho sem fio externo.',
+                highlights: ['Infravermelho', 'Sem fio', 'Uso externo'],
+                images: ['img/ivp-7000-ambiente.webp', 'img/ivp-7000-produto.webp'],
+                quoteLabel: 'Sensor IVP 7000 SMART EX Intelbras'
             },
             {
                 id: 'roteador-intelbras',
@@ -1031,7 +882,7 @@
                 title: 'Roteador Intelbras',
                 description: 'Sinal Wi-Fi estável e de alto alcance para escritórios e residências, suportando múltiplos dispositivos conectados sem quedas.',
                 highlights: ['Alta Velocidade', 'Sinal Estável', 'Controle de Banda'],
-                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2023-07/imagem-categoria-roteadores-w6-1500g.png?itok=x-mUGNNM',
+                image: 'img/produto-roteador.webp',
                 quoteLabel: 'Roteador Intelbras'
             },
             {
@@ -1041,8 +892,18 @@
                 title: 'Switch Gerenciável',
                 description: 'Tráfego de dados profissional com segmentação por VLANs, portas Gigabit e priorização inteligente para empresas e racks estruturados.',
                 highlights: ['Portas Gigabit', 'Gestão VLAN', 'Padrão Rack'],
-                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2024-04/s2352g-b-04.png' ,
+                image: 'img/produto-switch-gerenciavel.webp' ,
                 quoteLabel: 'Switch Gerenciável Intelbras'
+            },
+            {
+                id: 'rack-parede',
+                category: 'Redes',
+                tag: 'Infraestrutura',
+                title: 'Racks de Parede',
+                description: 'Proteja seus equipamentos e otimize a área útil utilizando os racks de parede montados e desmontados.',
+                highlights: ['Montados ou desmontados', 'Protege equipamentos', 'Otimiza espaço'],
+                images: ['img/rack-parede.webp'],
+                quoteLabel: 'Racks de Parede Intelbras'
             },
             {
                 id: 'rack-enterprise',
@@ -1051,7 +912,7 @@
                 title: 'Rack Fechado Enterprise 44U 1160mm',
                 description: 'O Rack Fechado Enterprise (RFE) é ideal para DataCenters, oferecendo robustez e maior profundidade para acomodar servidores.',
                 highlights: ['44U', '1160 mm de profundidade', 'Ideal p/ DataCenter'],
-                image: 'https://backend.intelbras.com/sites/default/files/2024-09/rack-fechado-enterprise-rfe-44116.png',
+                image: 'img/produto-rack-44u.webp',
                 quoteLabel: 'Rack Fechado Enterprise 44U 1160mm'
             },
             {
@@ -1061,7 +922,7 @@
                 title: 'Conexão Sem Fio (Par de Rádios Outdoor)',
                 description: 'Interliga matriz e filial, galpões ou câmeras remotas a longa distância sem precisar passar cabos, usando dois rádios externos.',
                 highlights: ['Longa Distância', 'Sem Cabos', 'Uso Externo (IP65)'],
-                image: 'https://backend.intelbras.com/sites/default/files/styles/medium/public/2026-01/kit-wom-5a-mimo-g2-01.png',
+                image: 'img/produto-radios-outdoor.webp',
                 quoteLabel: 'Conexão Sem Fio (Par de Rádios Outdoor Intelbras)'
             }
         ];
@@ -1088,6 +949,12 @@
             'NVD Intelbras (Gravador de Vídeo em Rede)',
             'Motor Automatizador Basculante de Alta Performance',
             'Central de Alarme AMT 2018 E SMART Intelbras',
+            'Câmeras Multi HD Intelbras',
+            'Câmeras Wi-Fi Mibo Intelbras',
+            'Software S.I.M. Play Intelbras',
+            'Videoporteiro XPE 3200 Plus IP Intelbras',
+            'Sensor IVP 7000 SMART EX Intelbras',
+            'Racks de Parede Intelbras',
             'Roteador Intelbras',
             'Switch Gerenciável Intelbras',
             'Rack Fechado Enterprise 44U 1160mm',
@@ -1095,6 +962,40 @@
         ];
 
         let selectedQuoteServices = ['Infraestrutura de Redes'];
+
+        // Mídia do card: uma foto, ou um bloco de fotos do mesmo tipo que alterna a cada 4s
+        function equipmentMedia(item) {
+            const badge = `<span class="absolute top-3.5 left-3.5 z-10 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">${item.tag}</span>`;
+            if (item.images && item.images.length) {
+                const multi = item.images.length > 1;
+                const slides = item.images.map((src, i) => `<img src="${src}" alt="${item.title} (foto ${i + 1} de ${item.images.length})" width="640" height="366" loading="lazy" decoding="async" class="eq-slide absolute inset-0 w-full h-full object-cover${i === 0 ? ' is-active' : ''}">`).join('');
+                const dots = multi ? `<div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-white/70 backdrop-blur-sm">${item.images.map((_, i) => `<button type="button" class="eq-dot${i === 0 ? ' is-active' : ''}" aria-label="Ver foto ${i + 1} de ${item.images.length}"></button>`).join('')}</div>` : '';
+                return `<div class="eq-media relative h-56 bg-white border-b border-slate-100 overflow-hidden"${multi ? ' data-multi="1" role="group" aria-roledescription="carrossel" aria-label="Fotos de ' + item.title + '"' : ''}>${badge}${slides}${dots}</div>`;
+            }
+            return `<div class="relative bg-white h-56 p-6 flex items-center justify-center border-b border-slate-100 overflow-hidden">${badge}<img src="${item.image}" alt="${item.title}" width="400" height="300" loading="lazy" decoding="async" class="max-h-40 max-w-full object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/400x300/f8fafc/0f172a?text=M7+Tecnologia'"></div>`;
+        }
+
+        // Alterna as fotos dos blocos a cada 4 segundos (pausa com mouse/foco; sem autoplay se o usuário reduz animações)
+        let eqTimers = [];
+        function initEquipmentCarousels(grid) {
+            eqTimers.forEach(clearInterval); eqTimers = [];
+            const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            grid.querySelectorAll('.eq-media[data-multi]').forEach(box => {
+                const slides = [...box.querySelectorAll('.eq-slide')], dots = [...box.querySelectorAll('.eq-dot')];
+                let cur = 0, timer = null;
+                const show = n => {
+                    cur = (n + slides.length) % slides.length;
+                    slides.forEach((el, i) => el.classList.toggle('is-active', i === cur));
+                    dots.forEach((d, i) => { d.classList.toggle('is-active', i === cur); d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+                };
+                const stop = () => { clearInterval(timer); timer = null; };
+                const start = () => { if (reduce || timer) return; timer = setInterval(() => show(cur + 1), 4000); eqTimers.push(timer); };
+                dots.forEach((d, i) => d.addEventListener('click', () => { show(i); stop(); start(); }));
+                box.addEventListener('mouseenter', stop); box.addEventListener('mouseleave', start);
+                box.addEventListener('focusin', stop); box.addEventListener('focusout', start);
+                start();
+            });
+        }
 
         // Renderiza os cards de equipamentos
         function renderEquipments(filter = 'Todos') {
@@ -1106,12 +1007,7 @@
             grid.innerHTML = filtered.map(item => `
                 <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-200/90 transition-all duration-300 flex flex-col justify-between">
                     <div>
-                        <div class="relative bg-white h-56 p-6 flex items-center justify-center border-b border-slate-100 overflow-hidden">
-                            <span class="absolute top-3.5 left-3.5 z-10 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                                ${item.tag}
-                            </span>
-                            <img src="${item.image}" alt="${item.title}" width="400" height="300" loading="lazy" decoding="async" class="max-h-40 max-w-full object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/400x300/f8fafc/0f172a?text=M7+Tecnologia'">
-                        </div>
+                        ${equipmentMedia(item)}
 
                         <div class="p-6 pb-4">
                             <h3 class="font-extrabold text-lg sm:text-xl text-slate-900 mb-2.5 leading-snug">${item.title}</h3>
@@ -1151,6 +1047,7 @@
                 });
             });
 
+            initEquipmentCarousels(grid);
             if (window.lucide) lucide.createIcons();
         }
 

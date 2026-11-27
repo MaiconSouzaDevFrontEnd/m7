@@ -13,11 +13,48 @@
         .bg-grid { background-color: #ffffff; background-image: linear-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.14) 1px, transparent 1px); background-size: 40px 40px; }
         .bg-glow-blue { background-color: #f8fafc; background-image: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.12), transparent 55%), radial-gradient(ellipse at bottom left, rgba(14, 165, 233, 0.10), transparent 50%); }
         .bg-soft-blue { background-image: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%); }
-        #inicio { background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px), linear-gradient(to bottom, #eff6ff, #ffffff 65%, #ffffff); background-size: 22px 22px, 100% 100%; }
-        .security-card-cftv { background-image: url("../img/banner-cftv.webp"); }
-        .security-card-alarms { background-image: url("../img/banner-alarmes.webp"); }
-        .security-card-fences { background-image: url("../img/banner-cercas.webp"); }
-        .security-card-gates { background-image: url("../img/banner-motores-portoes.webp"); }
+        #inicio { background-color: #0b1220; background-image: radial-gradient(ellipse at 80% 0%, rgba(34, 211, 238, 0.16), transparent 55%), linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px); background-size: 100% 100%, 44px 44px, 44px 44px; }
         .cat-car { scrollbar-width: none; }
         .cat-car::-webkit-scrollbar { display: none; }
         .map-embed { border: 0; }
+        /* Cards de equipamentos: blocos de fotos que alternam a cada 4s */
+        .eq-slide { opacity: 0; transition: opacity .6s ease; }
+        .eq-slide.is-active { opacity: 1; }
+        .eq-dot { position: relative; width: 8px; height: 8px; padding: 0; border-radius: 9999px; background: rgba(15, 23, 42, .35); border: 1px solid rgba(255, 255, 255, .9); cursor: pointer; transition: width .3s ease, background-color .3s ease; }
+        .eq-dot::before { content: ""; position: absolute; inset: -8px; }
+        .eq-dot.is-active { width: 22px; background: #2563eb; }
+        @media (prefers-reduced-motion: reduce) { .eq-slide, .eq-dot { transition: none; } }
+
+        /* Tema tecnológico: seções escuras, destaque ciano, brilho nos cards */
+        .m7-dark { position: relative; background-color: #0b1220; background-image: radial-gradient(ellipse at 15% 0%, rgba(37, 99, 235, 0.18), transparent 55%), linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px); background-size: 100% 100%, 44px 44px, 44px 44px; }
+        .m7-glow, .m7-card { transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+        .m7-glow:hover { border-color: rgba(34, 211, 238, .5); box-shadow: 0 0 28px rgba(34, 211, 238, .14); transform: translateY(-2px); }
+        .m7-card:hover { border-color: rgba(37, 99, 235, .45); box-shadow: 0 12px 32px rgba(37, 99, 235, .12); }
+
+        /* Card rotativo de suporte (troca a cada 4s): fade + zoom suave */
+        .sr-slide { opacity: 0; transform: scale(1.08); transition: opacity .9s ease, transform 5s ease-out; }
+        .sr-slide.is-active { opacity: 1; transform: scale(1); }
+        .sr-text { opacity: 0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; }
+        .sr-text.is-active { opacity: 1; transform: none; }
+        .sr-dot { position: relative; width: 8px; height: 8px; padding: 0; border-radius: 9999px; background: rgba(255, 255, 255, .35); cursor: pointer; transition: width .3s ease, background-color .3s ease; }
+        .sr-dot::before { content: ""; position: absolute; inset: -8px; }
+        .sr-dot.is-active { width: 22px; background: #22d3ee; }
+        @media (prefers-reduced-motion: reduce) { .sr-slide, .sr-text, .sr-dot { transition: none; transform: none; } }
+
+        /* Botões de tipo de portão (abas) */
+        .pt-tab { padding: .5rem 1rem; border-radius: .5rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .75rem; font-weight: 700; letter-spacing: .03em; color: #67e8f9; background: rgba(34, 211, 238, .08); border: 1px solid rgba(34, 211, 238, .3); cursor: pointer; transition: background-color .25s ease, color .25s ease; }
+        .pt-tab:hover { background: rgba(34, 211, 238, .18); }
+        .pt-tab.is-active { background: #22d3ee; color: #082f49; border-color: #22d3ee; }
+
+        /* Clientes: faixa que desliza sem parar e recomeça sem salto */
+        .cl-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+        .cl-track { display: flex; width: max-content; animation: cl-scroll 45s linear infinite; }
+        .cl-track:hover { animation-play-state: paused; }
+        .cl-group { display: flex; gap: 1.25rem; padding-right: 1.25rem; margin: 0; padding-left: 0; list-style: none; flex-shrink: 0; }
+        @keyframes cl-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) {
+            .cl-track { animation: none; width: auto; justify-content: center; }
+            .cl-group[aria-hidden="true"], .cl-rep { display: none; }
+            .cl-group { flex-wrap: wrap; justify-content: center; padding-right: 0; }
+            .cl-marquee { -webkit-mask-image: none; mask-image: none; }
+        }
