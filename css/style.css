@@ -58,3 +58,23 @@
             .cl-group { flex-wrap: wrap; justify-content: center; padding-right: 0; }
             .cl-marquee { -webkit-mask-image: none; mask-image: none; }
         }
+
+        /* Certificados: miniaturas ilustrativas */
+        .cert { display: block; border-radius: .75rem; outline-offset: 4px; }
+        .cert:focus-visible { outline: 2px solid #22d3ee; }
+        .cert-paper { position: relative; aspect-ratio: 4 / 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3rem; padding: .75rem; text-align: center; overflow: hidden; border-radius: .75rem; background: linear-gradient(135deg, #fffdf7, #f1ede0); box-shadow: 0 8px 24px rgba(0, 0, 0, .35); transition: transform .25s ease, box-shadow .25s ease; }
+        .cert-paper::before { content: ""; position: absolute; inset: 7px; border: 2px solid var(--c); border-radius: .5rem; opacity: .5; }
+        .cert-paper::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--c); }
+        .cert:hover .cert-paper { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(34, 211, 238, .25); }
+        .cert-top { font: 700 .58rem 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .2em; color: #64748b; }
+        .cert-ico { width: 1.6rem; height: 1.6rem; color: var(--c); }
+        .cert-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1rem; line-height: 1.1; color: #0f172a; }
+        .cert-who { font-size: .62rem; color: #475569; }
+        .cert-by { font: 700 .56rem 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .18em; color: var(--c); }
+        .cert-cta { display: flex; align-items: center; justify-content: center; gap: .35rem; margin-top: .65rem; font: 600 .75rem 'JetBrains Mono', ui-monospace, monospace; color: #67e8f9; }
+
+        /* Anúncios: passam suavemente (fade + deslize curto) */
+        .ad-slide { position: absolute; inset: 0; display: block; opacity: 0; transform: translateX(32px); transition: opacity 1.2s ease, transform 1.2s ease; pointer-events: none; }
+        .ad-slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
+        .ad-slide.is-prev { transform: translateX(-32px); }
+        @media (prefers-reduced-motion: reduce) { .ad-slide { transition: none; transform: none; } }
